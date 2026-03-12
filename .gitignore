@@ -9,6 +9,8 @@ data/bertopic_v2/docs_with_topics_v2.csv
 # Fichiers volumineux generés par la pipeline (> 100MB)
 outputs/geo/COSIA_SCORE_v2.gpkg
 outputs/geo/articles_embeddings_cache.npy
+outputs/geo/COSIA_SCORE_finale_attrs.csv
+outputs/geo/COSIA_SCORE_v2_attrs.csv
 
 # GPKG finaux (générés, 30+ GB)
 *.gpkg
