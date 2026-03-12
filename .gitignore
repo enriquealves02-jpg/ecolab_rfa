@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Fichiers trop gros pour GitHub (> 100MB)
+data/bertopic_v2/docs_with_topics_v2.csv
+
+# Fichiers volumineux generés par la pipeline (> 100MB)
+outputs/geo/COSIA_SCORE_v2.gpkg
+outputs/geo/articles_embeddings_cache.npy
+
+# GPKG finaux (générés, 30+ GB)
+*.gpkg
+
+# Caches locaux
+bbox_cache.json
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/

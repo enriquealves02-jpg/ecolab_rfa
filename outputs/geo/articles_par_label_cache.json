@@ -1,0 +1,692 @@
+{
+  "Bâtiment": [
+    {
+      "titre": "Aménager avec l’existant - retour sur les 2èmes rencontres ligériennes des acteurs de l'aménagement",
+      "url": "https://www.cerema.fr/fr/actualites/amenager-existant-retour-2emes-rencontres-ligeriennes",
+      "extrait": "Une centaine d’élus et techniciens de collectivités, d’aménageurs et promoteurs ont échangé collectivement sur les conditions d’aménagement de 4 types de ces fonciers : les friches, les îlots de centre-ville, les densifications en zones détendues et le devenir des grandes bâtisses. En introduction à",
+      "score_llm": 0.8,
+      "score_cos": 0.7238764762878418
+    },
+    {
+      "titre": "Bonneville : le maire Stéphane Valli fait le point sur l’urbanisation de la commune",
+      "url": "https://www.ledauphine.com/economie/2021/04/07/bonneville-le-maire-stephane-valli-fait-le-point-sur-l-urbanisation-de-la-commune",
+      "extrait": "En quelques années, les Bonnevillois ont vu fleurir un peu partout sur la commune des panneaux annonçant de futurs projets immobiliers. Actuellement, une demi-douzaine est en cours de construction, et d’autres vont suivre. D’ici la fin du mandat, en 2026, pas loin de 500 logements devraient voir le ",
+      "score_llm": 0.8,
+      "score_cos": 0.7177702188491821
+    },
+    {
+      "titre": "Une expertise du Cerema sur les stratégies foncières en faveur du logement et des activités (artisanat et industrie) : Regards croisés des acteurs locaux chargés de leur mise en oeuvre",
+      "url": "https://www.cerema.fr/fr/actualites/expertise-du-cerema-strategies-foncieres-faveur-du-logement",
+      "extrait": "Une douzaine de structures issues de différentes régions ont pu échanger sur leurs constats et leurs pratiques au cours de trois ateliers. Le foncier devient un sujet de préoccupation croissant pour les collectivités, condition de développement de maintien de fonctions essentielles comme le logement",
+      "score_llm": 0.8,
+      "score_cos": 0.7176791429519653
+    }
+  ],
+  "Zone impérméable": [
+    {
+      "titre": "Stabilisation du phénomène de retrait-gonflement des sols argileux sous les habitations : un système innovant par infiltration d’eau de pluie",
+      "url": "https://www.cerema.fr/fr/actualites/stabilisation-du-phenomene-retrait-gonflement-sols-argileux",
+      "extrait": "Le phénomène de retrait – gonflement des sols argileux (RGA) s’accentue avec le changement climatique : ces sols augmentent en volume lorsqu’ils sont gorgés d’eau et se rétractent en période de sécheresse, ce qui entraîne des mouvements de sols qui endommagent les ouvrages construits en surface. Les",
+      "score_llm": 0.8,
+      "score_cos": 0.7764161825180054
+    },
+    {
+      "titre": "Inondations sur le réseau routier : le Cerema cartographie le risque d'inondation sur les routes du bassin versant de l'Arc",
+      "url": "https://www.cerema.fr/fr/actualites/inondations-reseau-routier-cerema-cartographie-risque",
+      "extrait": "Les inondations et le ruissellement ont un impact de plus en plus fort sur les réseaux routiers, entraînant des coupures de circulation et une mise en danger des usagers. Dans le cadre de la mise en œuvre du PAPI de l’Arc , l’action 5 a pour objectif d’ anticiper le risque d’inondation sur le réseau",
+      "score_llm": 0.8,
+      "score_cos": 0.7671042680740356
+    },
+    {
+      "titre": "Sécheresse : les routes sous surveillance",
+      "url": "https://www.cerema.fr/fr/actualites/secheresse-routes-surveillance",
+      "extrait": "Cet article du Cerema a été initialement publié par notre partenaire TechniCité . Les routes sont durement impactées par la sécheresse, qui provoque des dommages très significatifs pouvant constituer un danger pour les usagers, notamment via le phénomène de \" retrait-gonflement des sols argileux \", ",
+      "score_llm": 0.8,
+      "score_cos": 0.745070219039917
+    }
+  ],
+  "Zone perméable": [
+    {
+      "titre": "Zones humides et captages : Des fiches du Cerema sur des actions de protection menées dans les territoires",
+      "url": "https://www.cerema.fr/fr/actualites/zones-humides-captages-fiches-du-cerema-actions-protection",
+      "extrait": "Les zones humides ont différentes fonctions hydrologiques, biogéochimiques et liées à la biodiversité. Les mesures de protection des zones humides, en particulier sur les zones de captage d'eau, ont un intérêt pour l'amélioration de la qualité et la quantité de la ressource en eau. Ces fiches présen",
+      "score_llm": 0.9,
+      "score_cos": 0.7268152236938477
+    },
+    {
+      "titre": "Nouvel ouvrage : \"Jardins de pluie - Une dimension écologique et paysagère de l’aménagement\"",
+      "url": "https://www.cerema.fr/fr/actualites/nouvel-ouvrage-jardins-pluie-dimension-ecologique-paysagere",
+      "extrait": "Aujourd’hui, de nombreux aménagements font une part belle à l’eau et au végétal dans l’espace public. De l’échelle de la parcelle à celle du quartier, la gestion de l’eau pluviale devient un enjeu majeur de nombreux projets. L’objectif ici est de sensibiliser sur le sujet de la gestion pluviale dans",
+      "score_llm": 0.9,
+      "score_cos": 0.7257815599441528
+    },
+    {
+      "titre": "Une parcelle pour des jardins partagés",
+      "url": "https://www.ledauphine.com/environnement/2021/05/12/isere-la-forteresse-une-passerelle-pour-des-jardins-partages",
+      "extrait": "À La Forteresse, la commune a fait l’acquisition d’une parcelle de terrain dans le but de la mettre à disposition des habitants qui le souhaitent pour la création de jardins partagés. Le terrain a été remis en état, les surfaces ont été labourées, délimitées et la commune l’approvisionnera en eau. L",
+      "score_llm": 0.9,
+      "score_cos": 0.6928027868270874
+    }
+  ],
+  "Pelouse": [
+    {
+      "titre": "La restauration écologique passe aussi par les écosystèmes herbacés",
+      "url": "https://www.actu-environnement.com/ae/news/restauration-ecologique-ecosystemes-herbaces-biodiversite-stockage-carbone-40195.php4",
+      "extrait": "En matière de restauration écologique, planter des arbres est devenu la solution prédominante. Pourtant, les écosystèmes forestiers ne sont pas les seuls qui méritent d'être restaurés. Les écosystèmes herbacés abritent également une grande biodiversité et participent au stockage du carbone souterrai",
+      "score_llm": 0.9,
+      "score_cos": 0.68459153175354
+    },
+    {
+      "titre": "Fertilisation des prairies : au-delà d'un certain seuil, la biodiversité se perd",
+      "url": "https://www.actu-environnement.com/ae/news/etude-inrae-cnrs-fertilisation-prairies-services-ecosystemiques-46288.php4",
+      "extrait": "À partir de quel moment une pratique agricole perturbe-t-elle l'écosystème des prairies au point de perdre ses services écosystémiques comme la séquestration du carbone, le filtrage de l'eau ou le pâturage pour les animaux d'élevage ? C'est à cette question que l'Inrae et le CNRS ont répondu dans le",
+      "score_llm": 0.8,
+      "score_cos": 0.6808230876922607
+    },
+    {
+      "titre": "A la ferme du Bec-Hellouin, la permaculture dopée aux savoirs d’antan",
+      "url": "https://www.lemonde.fr/planete/article/2023/11/14/a-la-ferme-du-bec-hellouin-la-permaculture-dopee-aux-savoirs-d-antan_6199991_3244.html",
+      "extrait": "Une splendide mosaïque d’îlots potagers foisonnants, d’arbres fruitiers, de forêts-jardins peuplées d’oiseaux et d’insectes, de plantes sauvages, de mares creusées çà et là, le tout fendu par une rivière ondulante. Sur cinq hectares, la ferme du Bec-Hellouin, autrefois prairie peu fertile lovée au c",
+      "score_llm": 0.8,
+      "score_cos": 0.6487779021263123
+    }
+  ],
+  "Broussaille": [
+    {
+      "titre": "Dans les forêts landaises, les coupes rases ont toujours la cote",
+      "url": "https://www.lemonde.fr/planete/article/2022/03/17/dans-les-forets-landaises-les-coupes-rases-ont-toujours-la-cote_6117825_3244.html",
+      "extrait": "Des pins maritimes, il ne reste ici que les souches. Tout autour, le sol est recouvert d’ajoncs, de bruyères, de vieilles branches et de jeunes plants. Jean-Noël Mesplède désigne la parcelle de 7 hectares sur laquelle une abatteuse a œuvré fin 2020. « La coupe rase n’a pas traumatisé le sol outre me",
+      "score_llm": 0.8,
+      "score_cos": 0.682665228843689
+    },
+    {
+      "titre": "Reconvertir des friches (1/4) : enjeux et mode d'emploi",
+      "url": "https://www.actu-environnement.com/ae/news/enjeux-et-mode-emploi-reconversion-des-friches-46774.php4",
+      "extrait": "L'intérêt de réhabiliter des friches ne fait guère débat : dans un contexte de rareté du foncier et de lutte contre l'artificialisation de sols, ces réhabilitations donnent accès à un gisement de parcelles (lire encadré) pour construire sans empiéter sur les espaces naturels, agricoles et forestiers",
+      "score_llm": 0.8,
+      "score_cos": 0.6776834726333618
+    },
+    {
+      "titre": "Un feu sur deux est la conséquence d’une imprudence, l’appel à la vigilance du parc des Baronnies",
+      "url": "https://www.ledauphine.com/environnement/2021/08/18/un-feu-sur-deux-est-la-consequence-d-une-imprudence-l-appel-a-la-vigilance-du-parc-des-baronnies",
+      "extrait": "La forêt couvre 80  % du Parc naturel régional des Baronnies provençales. Une simple étincelle et cette richesse inestimable de biodiversité peut disparaître et mettre de très nombreuses années à se reconstruire. Les forêts méritent que nous les respections. Le PNR des Baronnies, toujours vigilant, ",
+      "score_llm": 0.8,
+      "score_cos": 0.6753506660461426
+    }
+  ],
+  "Feuillu": [
+    {
+      "titre": "Le règlement relatif à la déforestation et à la dégradation des forêts à l'aube d'une remise en cause ?",
+      "url": "https://www.actu-environnement.com/ae/news/reglement-ue-union-europeenne-deforestation-degradation-forets-44401.php4",
+      "extrait": "Violaine du Pontavice Avocate en droit de lenvironnement, ElfeTerria Avocats En Europe, les forêts couvrent plus de 37,7 % de la superficie terrestre. Bien plus que des étendues boisées, les forêts jouent un rôle essentiel dans la préservation de la vie sur Terre. La gestion des forêts a été mise e",
+      "score_llm": 0.9,
+      "score_cos": 0.7568845748901367
+    },
+    {
+      "titre": "Plantations d’arbres, géo-ingénierie, biocarburants… ces fausses bonnes idées pour le climat qui mettent en danger la biodiversité",
+      "url": "https://vert.eco/articles/plantations-darbres-geo-ingenierie-biocarburants-ces-fausses-bonnes-idees-pour-le-climat-qui-mettent-en-danger-la-biodiversite",
+      "extrait": "Partout dans le monde, les forêts souffrent d’ incendies à répétition ; dans les montagnes, les animaux et plantes remontent jusqu’où ils peuvent pour fuir les hausses de température ; dans l’océan, le blanchissement des coraux bat des records … Le changement climatique bouleverse plus que jamais la",
+      "score_llm": 0.8,
+      "score_cos": 0.7953834533691406
+    },
+    {
+      "titre": "La restauration écologique passe aussi par les écosystèmes herbacés",
+      "url": "https://www.actu-environnement.com/ae/news/restauration-ecologique-ecosystemes-herbaces-biodiversite-stockage-carbone-40195.php4",
+      "extrait": "En matière de restauration écologique, planter des arbres est devenu la solution prédominante. Pourtant, les écosystèmes forestiers ne sont pas les seuls qui méritent d'être restaurés. Les écosystèmes herbacés abritent également une grande biodiversité et participent au stockage du carbone souterrai",
+      "score_llm": 0.8,
+      "score_cos": 0.7912487387657166
+    }
+  ],
+  "Conifère": [
+    {
+      "titre": "Le ministère de l'Agriculture s'engage à mieux prévenir et réutiliser le bois scolyté",
+      "url": "https://www.actu-environnement.com/ae/news/ministere-agriculture-bois-scolytes-43885.php4",
+      "extrait": "Les sécheresses répétitives d'année en année entraînent la mort d'un nombre grandissant de pins et favorisent également le développement de scolytes, des coléoptères « ravageurs » (à la fois à travers les parasites qu'ils véhiculent et les galeries qu'ils creusent dans les arbres). Résultat : le vol",
+      "score_llm": 0.9,
+      "score_cos": 0.7612022161483765
+    },
+    {
+      "titre": "Le renouvellement forestier serait compromis par la surdensité des ongulés",
+      "url": "https://www.actu-environnement.com/ae/news/renouvellement-forestier-compormis-concentration-ongules-rapport-onf-igedd-cgaaer-46855.php4",
+      "extrait": "« Le renouvellement des peuplements forestiers, objet d'une attention particulière, est compromis par les surpopulations d'ongulés sauvages (1) mettant ainsi en péril la gestion durable de très nombreuses forêts publiques en métropole. » C'est l'avertissement lancé par un rapport (2) des services d'",
+      "score_llm": 0.9,
+      "score_cos": 0.7208898067474365
+    },
+    {
+      "titre": "Comment les 310 ha de forêt de la commune sont-ils gérés ?",
+      "url": "https://www.ledauphine.com/environnement/2021/08/12/isere-quaix-en-chartreuse-comment-les-310-ha-de-foret-de-la-commune-sont-ils-geres",
+      "extrait": "« La forêt couvre plus de la moitié de la surface de la commune de Quaix, soit environ 310 hectares, explique Pierre Faure. 150 hectares peuvent être exploités pour produire du bois de chauffage et du bois d’œuvre, 70 % sont des feuillus, 30 % des résineux », continue-t-il. La forêt communale est pr",
+      "score_llm": 0.9,
+      "score_cos": 0.6924755573272705
+    }
+  ],
+  "Culture": [
+    {
+      "titre": "[A relire] Face aux difficultés, l'agriculture biologique plie mais ne rompt pas",
+      "url": "https://www.actu-environnement.com/ae/news/agence-bio-chiffres-marche-bio-2021-40110.php4",
+      "extrait": "Contrairement aux idées reçues, le bio se porte plutôt bien, en France. Telles sont les conclusions de l'Agence bio qui publiait, ce vendredi 10 juin, les chiffres-clés de son secteur pour 2021. Avec une surface de près de 2,8 millions d'hectares consacrés à ce type d'agriculture, soit plus de 10 % ",
+      "score_llm": 0.8,
+      "score_cos": 0.74115389585495
+    },
+    {
+      "titre": "Territoires bios pilotes : quand les collectivités s'emparent de la question agricole",
+      "url": "https://www.actu-environnement.com/ae/news/agriculture-bio-territoires-engagement-charte-eau-preservation-ressource-PAT-installation-conversion-40744.php4",
+      "extrait": "Malgré les écueils ou les freins rencontrés par l'agriculture bio - comme la baisse de la consommation de ses produits , il est toujours possible de développer ce secteur dans les territoires. Les outils et les leviers existent. Tel est le message délivré par la Fédération nationale de l'agricultur",
+      "score_llm": 0.8,
+      "score_cos": 0.7232720851898193
+    },
+    {
+      "titre": "Le sorgho, culture d’avenir pour la France en plein dérèglement climatique",
+      "url": "https://www.lemonde.fr/planete/article/2022/10/24/le-sorgho-culture-d-avenir-face-au-rechauffement-climatique_6147042_3244.html",
+      "extrait": "C’est une nuance supplémentaire dans la palette chromatique des paysages ruraux : en plus de l’or des blés, du jaune du colza, du vert du maïs, les campagnes françaises voient se développer l’ocre brun des grains de sorgho . Cette plante originaire d’Afrique subsaharienne, cinquième céréale la plus ",
+      "score_llm": 0.8,
+      "score_cos": 0.7187955379486084
+    }
+  ],
+  "Terre labourée": [
+    {
+      "titre": "Agroécologie : la difficile voie vers le zéro pesticide",
+      "url": "https://www.actu-environnement.com/ae/news/agroecologie-test-sans-pesticides-dijon-inrae-41158.php4",
+      "extrait": "L'Inrae teste à grande échelle une agriculture sans pesticides et presque sans travail du sol. L'ambition : concevoir une agriculture résiliente tout en affichant des rendements qui talonnent ceux de l'agriculture conventionnelle. Un défi complexe. Plus de 120 hectares pour une cinquantaine de parce",
+      "score_llm": 0.8,
+      "score_cos": 0.6835099458694458
+    },
+    {
+      "titre": "Fertilisation des prairies : au-delà d'un certain seuil, la biodiversité se perd",
+      "url": "https://www.actu-environnement.com/ae/news/etude-inrae-cnrs-fertilisation-prairies-services-ecosystemiques-46288.php4",
+      "extrait": "À partir de quel moment une pratique agricole perturbe-t-elle l'écosystème des prairies au point de perdre ses services écosystémiques comme la séquestration du carbone, le filtrage de l'eau ou le pâturage pour les animaux d'élevage ? C'est à cette question que l'Inrae et le CNRS ont répondu dans le",
+      "score_llm": 0.8,
+      "score_cos": 0.68031907081604
+    },
+    {
+      "titre": "Dans le Vaucluse, des terres agricoles polluées par un compost infesté de déchets plastiques",
+      "url": "https://vert.eco/articles/dans-le-vaucluse-des-terres-polluees-par-un-compost-infeste-de-dechets-plastiques",
+      "extrait": "Dans la commune de Lauris (Vaucluse), l’association Au maquis cultive des terrains agricoles dans le cadre d’une expérimentation qui vise à instaurer une « sécurité sociale alimentaire » ( dont Vert vous parlait ici ). Fin février, afin de préparer la plantation des fruits et légumes de printemps, e",
+      "score_llm": 0.8,
+      "score_cos": 0.6737953424453735
+    }
+  ],
+  "Vigne": [
+    {
+      "titre": "Drôme et Ardèche : ce que contient le plan régional de soutien à la viticulture",
+      "url": "https://www.ledauphine.com/economie/2021/03/07/drome-et-ardeche-ce-que-contient-le-plan-regional-de-soutien-a-la-viticulture",
+      "extrait": "nan",
+      "score_llm": 0.9,
+      "score_cos": 0.6325570940971375
+    },
+    {
+      "titre": "Des ambitions à l’export",
+      "url": "https://www.ledauphine.com/economie/2019/11/05/des-ambitions-a-l-export-rcnb",
+      "extrait": "Les vins commercialisés par Anagram proviennent pour l’essentiel du sud de la France : Vallée du Rhône, Provence, Languedoc-Roussillon, et Sud-Ouest, et pour une petite partie du Chili. Les vignobles appartenant à l’entreprise, soit 220 hectares en France et 20 hectares au Chili, fournissent une par",
+      "score_llm": 0.9,
+      "score_cos": 0.6296665668487549
+    },
+    {
+      "titre": "Des ambitions à l’export",
+      "url": "https://www.ledauphine.com/economie/2019/11/05/des-ambitions-a-l-export-ctbn",
+      "extrait": "Les vins commercialisés par Anagram proviennent pour l’essentiel du sud de la France : Vallée du Rhône, Provence, Languedoc-Roussillon, et Sud-Ouest, et pour une petite partie du Chili. Les vignobles appartenant à l’entreprise, soit 220 hectares en France et 20 hectares au Chili, fournissent une par",
+      "score_llm": 0.9,
+      "score_cos": 0.6296665668487549
+    }
+  ],
+  "Serre": [
+    {
+      "titre": "L’agrivoltaïsme : quand les panneaux solaires viennent au secours de l’agriculture dans la vallée du Rhône",
+      "url": "https://www.ledauphine.com/environnement/2021/09/04/l-agrivoltaisme-sort-de-l-ombre",
+      "extrait": "C’est une évidence qu’il est facile de constater : la vigne se plaît sous ombrage photovoltaïque. Depuis dix minutes, nous arpentons les 600 m² de grenache noir couverts par des panneaux solaires sur le site expérimental de Piolenc dans le Vaucluse. Et la sensation de fraîcheur est édifiante, « entr",
+      "score_llm": 0.8,
+      "score_cos": 0.6874948143959045
+    },
+    {
+      "titre": "Agrivoltaïsme et économies d'eau : les synergies émergent",
+      "url": "https://www.actu-environnement.com/ae/news/video-agrivoltaisme-economie-eau-synergies-experimentation-41598.php4",
+      "extrait": "Quand les ombrières agrivoltaïques s'articulent en fonction des besoins des plantes et les protègent des aléas, les économies d'eau sont possibles. Des arguments qui ont du poids en cette période où l'eau manque déjà. Reportage dans le Vaucluse. Dans la commune d'Apt, dans le Vaucluse, une centrale ",
+      "score_llm": 0.8,
+      "score_cos": 0.6422446370124817
+    },
+    {
+      "titre": "Des agriculteurs du sud de la Drôme déplorent l’absence de véritable projet collectif d’irrigation",
+      "url": "https://www.ledauphine.com/economie/2020/05/18/des-agriculteurs-du-sud-de-la-drome-deplorent-l-absence-de-veritable-projet-collectif-d-irrigation",
+      "extrait": "Dans le sud de la Drôme, le projet Hauts de Provence rhodanienne (HPR) s’oriente davantage vers la réalisation de forages individuels que vers la création d’un nouveau réseau pour irriguer avec l’eau du Rhône. Sécheresse, canicule, réseaux existants saturés… Des agriculteurs du bassin-versant du Lez",
+      "score_llm": 0.8,
+      "score_cos": 0.6206766963005066
+    }
+  ],
+  "Piscine": [
+    {
+      "titre": "Accessibilité des piscines : quelles spécificités ne pas oublier ?",
+      "url": "https://www.cerema.fr/fr/actualites/accessibilite-piscines-quelles-specificites-ne-pas-oublier",
+      "extrait": "Lieux de loisirs et de détente, mais aussi lieux propices à la rééducation ou à la pratique du sport, les piscines sont des établissements recevant du public, aux nombreuses spécificités d’usage. Il est donc important d’assurer l’accessibilité de ces établissements pour tous, soit dans le cadre de l",
+      "score_llm": 0.9,
+      "score_cos": 0.6846064329147339
+    },
+    {
+      "titre": "Conflits d'usage lors de pénuries d'eau : audition par la mission d'information parlementaire et réutilisation des eaux usées traitées",
+      "url": "https://www.cerema.fr/fr/actualites/conflits-usage-lors-penuries-eau-audition-mission",
+      "extrait": "Avec le changement climatique, les épisodes de sécheresse s’intensifient et 20 % du territoire, qui est touché par une insuffisance chronique d’eau, est classé en zone de répartition des eaux (ZRE) . Ces épisodes entraînent une augmentation des conflits d’usage de l’eau : les activités agricoles, in",
+      "score_llm": 0.8,
+      "score_cos": 0.6680968999862671
+    },
+    {
+      "titre": "La sécheresse frappe le sud",
+      "url": "https://www.ledauphine.com/environnement/2016/07/27/la-secheresse-frappe-le-sud",
+      "extrait": "La sécheresse touche le Vaucluse et les Hautes-Alpes. Dans le premier département, la pluviométrie est déficitaire de plus de 80 %. Une situation aggravée par les fortes chaleurs et le mistral… Le préfet a donc ordonné hier le renforcement des mesures de restriction d’usage de l’eau. En fonction des",
+      "score_llm": 0.6,
+      "score_cos": 0.7020238637924194
+    }
+  ],
+  "Surface eau": [
+    {
+      "titre": "Zones humides et captages : Des fiches du Cerema sur des actions de protection menées dans les territoires",
+      "url": "https://www.cerema.fr/fr/actualites/zones-humides-captages-fiches-du-cerema-actions-protection",
+      "extrait": "Les zones humides ont différentes fonctions hydrologiques, biogéochimiques et liées à la biodiversité. Les mesures de protection des zones humides, en particulier sur les zones de captage d'eau, ont un intérêt pour l'amélioration de la qualité et la quantité de la ressource en eau. Ces fiches présen",
+      "score_llm": 0.9,
+      "score_cos": 0.7520023584365845
+    },
+    {
+      "titre": "À la découverte du marais des Portières",
+      "url": "https://www.ledauphine.com/environnement/2022/02/04/isere-saint-cassien-a-la-decouverte-du-marais-des-portieres",
+      "extrait": "Trop souvent asséchées ou comblées pour permettre des activités agricoles ou commerciales, les zones de marécages, ou zones humides, jouent un rôle prépondérant. Elles servent de zone tampon lors de crues importantes et limitent les risques d’inondations. Leur préservation permet... ...pour lire la ",
+      "score_llm": 0.9,
+      "score_cos": 0.7506965398788452
+    },
+    {
+      "titre": "Une enquête du Département sur la fréquentation des lacs et marais de la Matheysine",
+      "url": "https://www.ledauphine.com/environnement/2021/03/17/enquete-sur-la-frequentation-des-lacs-et-marais-de-la-matheysine",
+      "extrait": "En termes de patrimoine naturel, tant pour la richesse que pour la rareté des espèces qu’ils abritent, ces lacs et marais de la Matheysine sont remarquables. Ils intègrent une grande diversité de milieux humides : roselières, marais tourbeux, boisements en bordure des lacs. Des espèces végétales pat",
+      "score_llm": 0.9,
+      "score_cos": 0.7436199188232422
+    }
+  ],
+  "Sol nu": [
+    {
+      "titre": "\"Aléa versant rocheux sous-cavé : Caractérisation et évaluation\", un rapport méthodologique d'INERIS et du Cerema",
+      "url": "https://www.cerema.fr/fr/actualites/alea-versant-rocheux-cave-caracterisation-evaluation-rapport",
+      "extrait": "Le territoire national est exposé à une grande variété de mouvements de terrain, parmi lesquels les fronts rocheux susceptibles de générer des instabilités : chutes de pierres et de blocs, éboulements ou écroulements de falaise. Lorsque ces falaises présentent des cavages donnant accès à des cavités",
+      "score_llm": 0.9,
+      "score_cos": 0.657342791557312
+    },
+    {
+      "titre": "Reconvertir des friches (1/4) : enjeux et mode d'emploi",
+      "url": "https://www.actu-environnement.com/ae/news/enjeux-et-mode-emploi-reconversion-des-friches-46774.php4",
+      "extrait": "L'intérêt de réhabiliter des friches ne fait guère débat : dans un contexte de rareté du foncier et de lutte contre l'artificialisation de sols, ces réhabilitations donnent accès à un gisement de parcelles (lire encadré) pour construire sans empiéter sur les espaces naturels, agricoles et forestiers",
+      "score_llm": 0.8,
+      "score_cos": 0.6847841739654541
+    },
+    {
+      "titre": "Prise en compte des sols urbains et péri-urbains : focus sur les travaux du Cerema",
+      "url": "https://www.cerema.fr/fr/actualites/prise-compte-sols-urbains-peri-urbains-focus-travaux-du",
+      "extrait": "Les sols sont au croisement de plusieurs enjeux : artificialisation, gestion des eaux pluviales, préservation de la biodiversité, stockage du carbone... Ils doivent être perçus dans leurs différentes dimensions . Au-delà du rôle de support du bâti, leurs qualités et les fonctions qu’ils rendent doiv",
+      "score_llm": 0.8,
+      "score_cos": 0.6608438491821289
+    }
+  ],
+  "Neige": [
+    {
+      "titre": "Le réchauffement climatique menace la quasi-totalité des stations de ski européennes",
+      "url": "https://www.lemonde.fr/planete/article/2023/08/28/la-quasi-totalite-des-stations-de-ski-europeennes-menacees-par-le-rechauffement-climatique_6186865_3244.html",
+      "extrait": "Le changement climatique compromet le retour de la neige en hiver, menaçant l’avenir des stations de ski. A quel rythme ? Cette question – qui reste source de polémiques, en particulier en montagne –, fait l’objet d’ une étude scientifique publiée dans la revue Nature Climate Change, lundi 28 août ,",
+      "score_llm": 0.9,
+      "score_cos": 0.6990952491760254
+    },
+    {
+      "titre": "Dans le Vercors et dans les Bauges, les stations pensent déjà à « l’après ski »",
+      "url": "https://www.lemonde.fr/planete/article/2019/12/31/dans-le-vercors-et-dans-les-bauges-les-stations-pensent-deja-a-l-apres-ski_6024474_3244.html",
+      "extrait": "Les stations de ski de moyenne montagne doivent-elles renforcer les investissements en neige de culture, ou d’ores et déjà se reconvertir dans un tourisme « quatre saisons » ? Le massif du Vercors, entre Drôme et Isère, qui compte notamment les sites d’Autrans, Villard-de-Lans ou Corrençon, s’est em",
+      "score_llm": 0.8,
+      "score_cos": 0.7920408844947815
+    },
+    {
+      "titre": "Pourra-t-on encore skier en Europe dans un monde à +2 °C ?",
+      "url": "https://vert.eco/articles/pourra-t-on-encore-skier-en-europe-dans-un-monde-a-2-c",
+      "extrait": "Le ski occupe une place centrale dans l’économie de nombreuses régions de montagne à travers l’Europe. Comment font-elles face au changement climatique et quelles sont leurs marges de manœuvre ? Si ces dernières décennies, la France a pu voir certaines stations de ski fermer faute de neige ou de mod",
+      "score_llm": 0.8,
+      "score_cos": 0.7164198160171509
+    }
+  ],
+  "PARC_NATURA2000": [
+    {
+      "titre": "Savoir évaluer les incidences des projets sur les sites Natura 2000, un vade-mecum de la théorie à la pratique",
+      "url": "https://www.cerema.fr/fr/actualites/savoir-evaluer-incidences-projets-sites-natura-2000-vade",
+      "extrait": "Le réseau écologique européen Natura 2000 est composé de sites visant à préserver des milieux naturels, des animaux et des végétaux représentant un enjeu à l’échelle de l’Union européenne. Une réglementation spécifique s’y applique et tout projet doit envisager ses possibles incidences sur le réseau",
+      "score_llm": 0.9,
+      "score_cos": 0.8224644660949707
+    },
+    {
+      "titre": "Espaces naturels sensibles des Aravis : 14 000 ha sur 3 sites",
+      "url": "https://www.ledauphine.com/environnement/2021/04/09/espaces-naturels-sensibles-14-000-ha-sur-3-sites",
+      "extrait": "Le dispositif Natura 2000 est complémentaire des nombreuses autres politiques en faveur de l’environnement. La CCVT s’est également engagée dans une politique Espaces naturels sensibles (ENS), visant à préserver et valoriser les sites naturels sur l’ensemble du territoire. À lire aussi : Massif des ",
+      "score_llm": 0.9,
+      "score_cos": 0.7817413806915283
+    },
+    {
+      "titre": "Les étangs de Crosagny, un site classé Natura 2000",
+      "url": "https://www.ledauphine.com/environnement/2021/08/02/les-etangs-de-crosagny-un-site-classe-natura-2000",
+      "extrait": "C’est un site naturel magnifique à découvrir à pied ou à VTT. Situés au cœur de l’Albanais, les étangs de Crosagny, aujourd’hui site protégé Natura 2 000, possèdent une flore typique et accueillent tout au long de... ...pour lire la suite, rejoignez notre communauté d'abonnés et accédez à l'intégral",
+      "score_llm": 0.9,
+      "score_cos": 0.745248556137085
+    }
+  ],
+  "PARC_PNR": [
+    {
+      "titre": "Des actions autour de l’Atlas de la biodiversité communale",
+      "url": "https://www.ledauphine.com/environnement/2022/02/13/des-actions-autour-de-l-atlas-de-la-biodiversite-communale",
+      "extrait": "Des actions sont menées autour de l’Atlas de la biodiversité communale, réalisé sur le territoire du Parc Naturel Régional (PNR). Ce projet a pour objectif de recenser le patrimoine naturel, de connecter les habitants au territoire et de déterminer les outils... ...pour lire la suite, rejoignez notr",
+      "score_llm": 0.9,
+      "score_cos": 0.6527059078216553
+    },
+    {
+      "titre": "Un guide pratique pour gérer la fréquentation touristique dans les espaces naturels",
+      "url": "https://www.actu-environnement.com/ae/news/guide-parcs-naturels-regionaux-gerer-tourisme-collectivites-44506.php4",
+      "extrait": "La Fédération des parcs naturels régionaux (PNR) de France vient de publier un guide sur la fréquentation touristique dans les espaces naturels. Composé d'une centaine de pages, ce guide (1) a été réalisé avec le soutien de l'Agence nationale de la cohésion des territoires (ANCT), du ministère de la",
+      "score_llm": 0.9,
+      "score_cos": 0.649455189704895
+    },
+    {
+      "titre": "Protection de la biodiversité, le rôle des parcs nationaux",
+      "url": "https://www.cerema.fr/fr/actualites/protection-biodiversite-role-parcs-nationaux",
+      "extrait": "Trois sites hotspots de biodiversité s’illustrent par des actions remarquables pour : – Gérer l’interface ville-nature. – Engager une stratégie de gestion sur les espèces envahissantes. – Sensibiliser le public aux actions de terrain et aux enjeux liés à la protection de la biodiversité. – Restaurer",
+      "score_llm": 0.9,
+      "score_cos": 0.6343958377838135
+    }
+  ],
+  "PARC_RESERVE": [
+    {
+      "titre": "Biodiversité, solutions fondées sur la nature et adaptation : des outils et méthodes du Cerema pour les territoires",
+      "url": "https://www.cerema.fr/fr/actualites/biodiversite-solutions-fondees-nature-adaptation-outils",
+      "extrait": "La priorité est désormais à l'adaptation des territoires aux impacts du changement climatique, qui impacte fortement la biodiversité. Au niveau des territoires, différents outils et démarches visent à préserver la biodiversité, aussi bien dans les espaces naturels que dans les zones urbaines. A dest",
+      "score_llm": 0.9,
+      "score_cos": 0.7660319209098816
+    },
+    {
+      "titre": "Un guide méthodologique du Cerema: La nature source de biodiversité dans les territoires - De l’outil à la stratégie",
+      "url": "https://www.cerema.fr/fr/actualites/guide-methodologique-du-cerema-nature-source-biodiversite",
+      "extrait": "Les enjeux liés à la préservation de la biodiversité et à sa restauration dans les villes sont parfois difficiles à s’approprier par les collectivités. Le Cerema a produit cet ouvrage afin de les aider à identifier les outils et leviers mobilisables pour répondre à ces enjeux. Ce document vise à dif",
+      "score_llm": 0.9,
+      "score_cos": 0.7605361938476562
+    },
+    {
+      "titre": "Biodiversité : les aires protégées progressent en superficie et couvrent désormais au moins 17 % des zones terrestres",
+      "url": "https://www.lemonde.fr/planete/article/2021/05/19/biodiversite-les-aires-protegees-couvrent-17-des-terres-de-la-planete_6080748_3244.html",
+      "extrait": "Il faut, pour une fois, regarder le verre à moitié plein : la communauté internationale a tenu l’une de ses promesses en matière de protection de la biodiversité. Comme elle s’y était engagée en 2010, la superficie des aires protégées s’est largement étendue, pour couvrir au moins 17 % des terres. C",
+      "score_llm": 0.9,
+      "score_cos": 0.7549290657043457
+    }
+  ],
+  "GEOPARC": [
+    {
+      "titre": "Vingt sites remarquables à découvrir durant tout l’été",
+      "url": "https://www.ledauphine.com/environnement/2016/06/06/vingt-sites-remarquables-a-decouvrir-durant-tout-l-ete",
+      "extrait": "Hier, le Département avait choisi la plus grande des tourbières du Vercors, celle du Peuil, à 1 000 mètres d’altitude, sur la commune de Claix, pour lancer sa campagne de promotion estivale pour ses vingt sites remarquables, ou plutôt ses vingt Espaces naturels sensibles (ENS). Au pied de la falaise",
+      "score_llm": 0.8,
+      "score_cos": 0.6985249519348145
+    },
+    {
+      "titre": "Dans le Vercors, des aménagements pour contenir le tourisme sur des zones clés",
+      "url": "https://www.ledauphine.com/environnement/2021/05/16/dans-le-vercors-des-amenagements-pour-contenir-le-tourisme-sur-des-zones-cles",
+      "extrait": "Au plateau d’Ambel, un espace naturel de 1 200 hectares au cœur du Vercors drômois, l’écogarde Laurent Flenet affiche une mine enjouée en contemplant les grands espaces, ponctué de forêts d’arbres séculaires et de bandes de pâturage déchirées çà et là par quelques rocs massifs. « La faune évolue bie",
+      "score_llm": 0.8,
+      "score_cos": 0.6832215189933777
+    },
+    {
+      "titre": "Biodiversité : les faiblesses des études d’impact, étape-clé avant un projet d’aménagement",
+      "url": "https://www.lemonde.fr/planete/article/2023/05/05/biodiversite-les-faiblesses-des-etudes-d-impact-etape-cle-avant-un-projet-d-amenagement_6172206_3244.html",
+      "extrait": "Une petite plante de montagne, l’androsace du Dauphiné, pourrait-elle faire vaciller le futur téléphérique de La Grave (Hautes-Alpes), grand projet contesté de cette station ? D’après Sébastien Lavergne, chercheur au Laboratoire d’écologie alpine, qui a lui-même codécouvert cette nouvelle espèce en ",
+      "score_llm": 0.6,
+      "score_cos": 0.7214655876159668
+    }
+  ],
+  "FORET_PUBLIQUE": [
+    {
+      "titre": "Le règlement relatif à la déforestation et à la dégradation des forêts à l'aube d'une remise en cause ?",
+      "url": "https://www.actu-environnement.com/ae/news/reglement-ue-union-europeenne-deforestation-degradation-forets-44401.php4",
+      "extrait": "Violaine du Pontavice Avocate en droit de lenvironnement, ElfeTerria Avocats En Europe, les forêts couvrent plus de 37,7 % de la superficie terrestre. Bien plus que des étendues boisées, les forêts jouent un rôle essentiel dans la préservation de la vie sur Terre. La gestion des forêts a été mise e",
+      "score_llm": 0.9,
+      "score_cos": 0.7572628259658813
+    },
+    {
+      "titre": "Un feu sur deux est la conséquence d’une imprudence, l’appel à la vigilance du parc des Baronnies",
+      "url": "https://www.ledauphine.com/environnement/2021/08/18/un-feu-sur-deux-est-la-consequence-d-une-imprudence-l-appel-a-la-vigilance-du-parc-des-baronnies",
+      "extrait": "La forêt couvre 80  % du Parc naturel régional des Baronnies provençales. Une simple étincelle et cette richesse inestimable de biodiversité peut disparaître et mettre de très nombreuses années à se reconstruire. Les forêts méritent que nous les respections. Le PNR des Baronnies, toujours vigilant, ",
+      "score_llm": 0.9,
+      "score_cos": 0.747115969657898
+    },
+    {
+      "titre": "La forêt communale s’enrichit de 21 hectares gérés par l’ONF",
+      "url": "https://www.ledauphine.com/environnement/2021/05/03/la-foret-communale-s-enrichit-de-21-ha-geres-l-office-national-des-forets",
+      "extrait": "Pour valoriser durablement le patrimoine forestier public communal (d’une surface de 1 133 ha soit 35 % du territoire) il existe une disposition : l’application du régime forestier. Ce qui induit également un engagement pour le propriétaire. De fait, il devient responsable de la préservation de son ",
+      "score_llm": 0.9,
+      "score_cos": 0.7384200096130371
+    }
+  ],
+  "ZONE_VEG_FORET": [
+    {
+      "titre": "Plantations d’arbres, géo-ingénierie, biocarburants… ces fausses bonnes idées pour le climat qui mettent en danger la biodiversité",
+      "url": "https://vert.eco/articles/plantations-darbres-geo-ingenierie-biocarburants-ces-fausses-bonnes-idees-pour-le-climat-qui-mettent-en-danger-la-biodiversite",
+      "extrait": "Partout dans le monde, les forêts souffrent d’ incendies à répétition ; dans les montagnes, les animaux et plantes remontent jusqu’où ils peuvent pour fuir les hausses de température ; dans l’océan, le blanchissement des coraux bat des records … Le changement climatique bouleverse plus que jamais la",
+      "score_llm": 0.9,
+      "score_cos": 0.8087928295135498
+    },
+    {
+      "titre": "Réchauffement climatique : des moyens insuffisants et des plans de gestion obsolètes pour les forêts",
+      "url": "https://www.lemonde.fr/planete/article/2024/03/12/rechauffement-climatique-des-moyens-insuffisants-et-des-plans-de-gestion-obsoletes-pour-les-forets_6221528_3244.html",
+      "extrait": "Les épicéas sont ravagés par le scolyte, un insecte qui prolifère à la faveur d’hivers doux ; les sapins tombent sous l’effet de la sécheresse. A Lemuy (Jura), 70 % de la forêt communale est fragilisée par le dérèglement climatique. En cinq ans, les recettes issues de la forêt ont été divisées par t",
+      "score_llm": 0.9,
+      "score_cos": 0.7878137826919556
+    },
+    {
+      "titre": "Le règlement relatif à la déforestation et à la dégradation des forêts à l'aube d'une remise en cause ?",
+      "url": "https://www.actu-environnement.com/ae/news/reglement-ue-union-europeenne-deforestation-degradation-forets-44401.php4",
+      "extrait": "Violaine du Pontavice Avocate en droit de lenvironnement, ElfeTerria Avocats En Europe, les forêts couvrent plus de 37,7 % de la superficie terrestre. Bien plus que des étendues boisées, les forêts jouent un rôle essentiel dans la préservation de la vie sur Terre. La gestion des forêts a été mise e",
+      "score_llm": 0.9,
+      "score_cos": 0.7744144201278687
+    }
+  ],
+  "ZONE_VEG_VIGNE": [
+    {
+      "titre": "Ardèche : des agriculteurs expérimentent le traitement des vignes avec un drone",
+      "url": "https://www.ledauphine.com/economie/2021/07/20/ardeche-des-agriculteurs-experimentent-le-traitement-des-vignes-avec-un-drone",
+      "extrait": "Des coteaux de Cornas, il faut apprécier le majestueux panorama. La vallée du Rhône devance le Vercors. Les ruines du château de Crussol se distinguent de la forêt ardéchoise. En dessous, les vignes découpent la colline aux pentes raides. Très raides. « Là, on est à 45 % », arrondit Olivier Clape, u",
+      "score_llm": 0.9,
+      "score_cos": 0.6553056240081787
+    },
+    {
+      "titre": "En Ardèche, la vallée aux mille et une retenues",
+      "url": "https://www.lemonde.fr/planete/article/2022/06/20/en-ardeche-la-vallee-aux-mille-et-une-retenues_6131152_3244.html",
+      "extrait": "La vue est belle, depuis les collines de la vallée du Doux, en Ardèche : vergers de cerisiers et d’abricotiers, prairies et champs de blé forment un entrelacs de petites parcelles ponctué de haies et de bosquets. Au milieu de ce paysage mosaïque, on devine, à la verdure qui les entoure, les « lacs »",
+      "score_llm": 0.8,
+      "score_cos": 0.6407023072242737
+    },
+    {
+      "titre": "Entre Drôme et Isère, il veille sur les 17 000 hectares des Hauts Plateaux du Vercors",
+      "url": "https://www.ledauphine.com/environnement/2021/03/20/chatillon-en-diois-il-veille-sur-les-16-000-m-des-hauts-plateaux-du-vercors",
+      "extrait": "Partout où il porte son regard, des falaises vertigineuses en calcaire, des vallées inoccupées… C’est un écrin de verdure alimenté d’une faune d’une richesse absolue. Une parenthèse dans un monde où le mouvement est roi. Bruno Cuerva relève son bonnet. Depuis 20 ans, ce sexagénaire, originaire du Di",
+      "score_llm": 0.8,
+      "score_cos": 0.6363489627838135
+    }
+  ],
+  "ZONE_VEG_VERGER": [
+    {
+      "titre": "Bourg-lès-Valence : en rachetant une nouvelle exploitation agricole, Jardin’envie franchit un nouveau cap dans la culture de légumes bio",
+      "url": "https://www.ledauphine.com/economie/2021/09/28/bourg-les-valence-en-rachetant-une-nouvelle-exploitation-agricole-jardin-envie-franchit-un-nouveau-cap-dans-la-culture-de-legumes-bio",
+      "extrait": "nan",
+      "score_llm": 0.8,
+      "score_cos": 0.6191107034683228
+    },
+    {
+      "titre": "Arboriculture : trois générations de producteurs racontent l'évolution de leur métier",
+      "url": "https://www.ledauphine.com/economie/2021/03/12/isere-bievre-arboriculture-trois-generations-de-producteurs-racontent-l-evolution-de-leur-metier",
+      "extrait": "Sur le territoire, de nombreuses exploitations agricoles sont spécialisées en production de fruits, depuis notamment les années 1960. Des exploitants, en activité ou retraités, nous racontent l’évolution de cette culture locale. ...pour lire la suite, rejoignez notre communauté d'abonnés et accédez ",
+      "score_llm": 0.8,
+      "score_cos": 0.6128746867179871
+    },
+    {
+      "titre": "Saint-Marcel-lès-Valence : les beaux légumes bio de Graine de Cocagne",
+      "url": "https://www.ledauphine.com/economie/2021/08/16/saint-marcel-les-valence-les-beaux-legumes-bio-de-graine-de-cocagne",
+      "extrait": "La production bat son plein au jardin de Graine de Cocagne, quartier Marquet, à cheval sur les communes de Saint-Marcel et Bourg-lès-Valence. Les légumes d’été arrivent à profusion en ce moment sur les 4,5 hectares de terres cultivées, dont 0,5 hectare en serre. « Actuellement ce sont 500 kg de toma",
+      "score_llm": 0.8,
+      "score_cos": 0.6092867851257324
+    }
+  ],
+  "ZONE_VEG_LANDE": [
+    {
+      "titre": "Une enquête du Département sur la fréquentation des lacs et marais de la Matheysine",
+      "url": "https://www.ledauphine.com/environnement/2021/03/17/enquete-sur-la-frequentation-des-lacs-et-marais-de-la-matheysine",
+      "extrait": "En termes de patrimoine naturel, tant pour la richesse que pour la rareté des espèces qu’ils abritent, ces lacs et marais de la Matheysine sont remarquables. Ils intègrent une grande diversité de milieux humides : roselières, marais tourbeux, boisements en bordure des lacs. Des espèces végétales pat",
+      "score_llm": 0.8,
+      "score_cos": 0.6970537304878235
+    },
+    {
+      "titre": "Les haies retrouvent leur place dans les vignobles",
+      "url": "https://www.actu-environnement.com/ae/news/video-haies-plantation-services-ecologiques-agriculture-41352.php4",
+      "extrait": "Les haies en milieu agricole fournissent de nombreux services écologiques, pourtant elles ont quasiment disparu au profit d'une agriculture plus intensive. Des programmes de plantation permettent de stabiliser le linéaire actuel. Reportage. Sur le domaine viticole du Château Puech-Haut, à 20 km au n",
+      "score_llm": 0.8,
+      "score_cos": 0.6916770339012146
+    },
+    {
+      "titre": "Plantons des haies pour préserver le vivant et l’agriculture",
+      "url": "https://vert.eco/articles/plantons-des-haies-pour-preserver-le-vivant-et-lagriculture",
+      "extrait": "Haies lasses. Les défenseurs de l’agroforesterie militent pour que les haies, qui rendent une foule de services à l’agriculture, soient mieux protégées dans le cadre de la future Politique agricole commune . Elles hébergent une foisonnante biodiversité : oiseaux, petits mammifères ou insectes, qui s",
+      "score_llm": 0.8,
+      "score_cos": 0.6803438067436218
+    }
+  ],
+  "COURS_EAU": [
+    {
+      "titre": "Le SCoT, un outil pertinent pour renforcer la gestion de l’eau et des risques d’inondation face aux défis du changement climatique",
+      "url": "https://www.cerema.fr/fr/actualites/scot-outil-pertinent-renforcer-gestion-eau-risques",
+      "extrait": "L’eau est devenue un enjeu sociétal majeur, impacté par les évolutions hydro-climatiques qui affectent tant la qualité que la quantité de cette ressource essentielle [1] . Les projections nationales entre 2050 et 2100 indiquent une intensification des risques liés à l’eau, notamment des sécheresses ",
+      "score_llm": 0.9,
+      "score_cos": 0.7350358366966248
+    },
+    {
+      "titre": "Une méthode du Cerema pour évaluer l'impact des polluants des eaux pluviales routières sur un cours d'eau",
+      "url": "https://www.cerema.fr/fr/actualites/methode-du-cerema-evaluer-impact-polluants-eaux-pluviales",
+      "extrait": "La préservation de la qualité de l’écosystème aquatique est un enjeu fort dans un contexte de changement climatique, où l’on observe à la fois une diminution de la ressource en eau, de sa qualité, et de la biodiversité. Le Cerema s’est penché sur la question de l’ impact des eaux pluviales ruisselan",
+      "score_llm": 0.8,
+      "score_cos": 0.7306514382362366
+    },
+    {
+      "titre": "Eau potable, irrigation, production électrique : tensions sur le partage de l’eau dans le Sud-Est asséché",
+      "url": "https://www.lemonde.fr/planete/article/2022/08/06/dans-le-sud-est-asseche-le-partage-de-l-eau-se-tend_6137370_3244.html",
+      "extrait": "C’est un immense château d’eau que beaucoup pensaient inépuisable et dont la sécheresse exceptionnelle de cette année 2022 révèle soudain les limites. Derrière ses lacs bleus, ses gorges fraîches et ses canaux typiques, le système Durance-Verdon constitue un complexe schéma de stockage, de captation",
+      "score_llm": 0.8,
+      "score_cos": 0.7078074216842651
+    }
+  ],
+  "PLAN_EAU": [
+    {
+      "titre": "À la découverte du marais des Portières",
+      "url": "https://www.ledauphine.com/environnement/2022/02/04/isere-saint-cassien-a-la-decouverte-du-marais-des-portieres",
+      "extrait": "Trop souvent asséchées ou comblées pour permettre des activités agricoles ou commerciales, les zones de marécages, ou zones humides, jouent un rôle prépondérant. Elles servent de zone tampon lors de crues importantes et limitent les risques d’inondations. Leur préservation permet... ...pour lire la ",
+      "score_llm": 0.9,
+      "score_cos": 0.6944918632507324
+    },
+    {
+      "titre": "Baignade en Ardèche, dans la Drôme et dans le Vaucluse : les plans d'eaux à éviter",
+      "url": "https://www.ledauphine.com/environnement/2021/06/13/baignade-en-ardeche-dans-la-drome-et-dans-le-vaucluse-les-plans-d-eaux-a-eviter",
+      "extrait": "L'Agence régionale de santé de la région Auvergne Rhône-Alpes a recensé en 2019, 3 348 sites de baignade (1 304 en eau douce et 2 044 eau de mer) répartis sur les départements de métropole et d'outre-mer. Plus de 34 000 prélèvements d'échantillons d'eau ont été effectués en vue d'analyser la qualité",
+      "score_llm": 0.8,
+      "score_cos": 0.7203603982925415
+    },
+    {
+      "titre": "En Ardèche, une « nappe phréatique artificielle » pour éviter les coupures d’eau",
+      "url": "https://www.lemonde.fr/planete/article/2022/04/23/dans-un-village-cevenol-une-nappe-phreatique-artificielle-pour-eviter-les-coupures-d-eau_6123374_3244.html",
+      "extrait": "L’été est encore loin, mais, dans l’Hexagone, l’eau vient déjà à manquer. Après un hiver anormalement sec dans plusieurs régions françaises, le niveau de certaines nappes phréatiques est bas. Neuf départements, principalement dans l’ouest et le sud de la France, sont actuellement soumis à des restri",
+      "score_llm": 0.8,
+      "score_cos": 0.711129367351532
+    }
+  ],
+  "SURFACE_HYDRO": [
+    {
+      "titre": "\"Zones humides et aménagement\" Retour sur la journée du 3 décembre 2019",
+      "url": "https://www.cerema.fr/fr/actualites/zones-humides-amenagement-retour-journee-du-3-decembre-2019",
+      "extrait": "Les zones humides (marais, prairies humides, lagunes, tourbières), en eau en permanence ou par intermittence, représentent des espaces naturels riches et précieux. Elles abritent une forte diversité biologique caractérisée par un grand nombre d'espèces de plantes et d'animaux. Au cours de la seconde",
+      "score_llm": 0.9,
+      "score_cos": 0.7565469741821289
+    },
+    {
+      "titre": "Zones humides et captages : Des fiches du Cerema sur des actions de protection menées dans les territoires",
+      "url": "https://www.cerema.fr/fr/actualites/zones-humides-captages-fiches-du-cerema-actions-protection",
+      "extrait": "Les zones humides ont différentes fonctions hydrologiques, biogéochimiques et liées à la biodiversité. Les mesures de protection des zones humides, en particulier sur les zones de captage d'eau, ont un intérêt pour l'amélioration de la qualité et la quantité de la ressource en eau. Ces fiches présen",
+      "score_llm": 0.9,
+      "score_cos": 0.7484472393989563
+    },
+    {
+      "titre": "À la découverte du marais des Portières",
+      "url": "https://www.ledauphine.com/environnement/2022/02/04/isere-saint-cassien-a-la-decouverte-du-marais-des-portieres",
+      "extrait": "Trop souvent asséchées ou comblées pour permettre des activités agricoles ou commerciales, les zones de marécages, ou zones humides, jouent un rôle prépondérant. Elles servent de zone tampon lors de crues importantes et limitent les risques d’inondations. Leur préservation permet... ...pour lire la ",
+      "score_llm": 0.9,
+      "score_cos": 0.7359549403190613
+    }
+  ],
+  "EOLIENNE": [
+    {
+      "titre": "Les friches et les parkings, terrains potentiels de développement pour l’énergie solaire",
+      "url": "https://www.lemonde.fr/planete/article/2019/05/24/les-friches-et-les-parkings-terrains-potentiels-de-developpement-pour-l-energie-solaire_5466682_3244.html",
+      "extrait": "L’essor des filières renouvelables est aujourd’hui freiné dans l’Hexagone par l’opposition croissante de riverains à de nouvelles implantations, ainsi que par des conflits d’usage des terrains avec d’autres utilisations, agricoles, commerciales ou résidentielles. C’est le cas pour l’éolien, dont les",
+      "score_llm": 0.9,
+      "score_cos": 0.7018284797668457
+    },
+    {
+      "titre": "Parcs éoliens : des projets clivants dans nos départements",
+      "url": "https://www.ledauphine.com/environnement/2021/02/04/parcs-eoliens-des-projets-clivants-dans-nos-departements",
+      "extrait": "La volonté de réduire la part du nucléaire dans notre production d'électricité suppose le développement d'autres sources d'énergie, notamment renouvelables. Mais la guerre entre les défenseurs et les anti-éoliens ne cesse de faire rage. Si les premiers y voient une alternative pour lutter contre le ",
+      "score_llm": 0.9,
+      "score_cos": 0.689800500869751
+    },
+    {
+      "titre": "Sites protégés et ENR : l'approche paysagère s'affine",
+      "url": "https://www.actu-environnement.com/ae/news/enr-sites-proteges-paysage-approche-46797.php4",
+      "extrait": "La biodiversité et, plus récemment, le paysage font l'objet de nombreux recours contre des projets d'installations d'énergies renouvelables, notamment éoliens. Alors comment mieux concilier ces enjeux avec la transition énergétique ? Les gestionnaires d'espaces protégés, que ceux-ci soient naturels,",
+      "score_llm": 0.8,
+      "score_cos": 0.7425028085708618
+    }
+  ],
+  "BARRAGE": [
+    {
+      "titre": "Après les intempéries, le bassin nautique de Chasse-sur-Rhône inondé",
+      "url": "https://www.ledauphine.com/environnement/2022/01/01/isere-apres-les-intemperies-le-bassin-nautique-de-chasse-sur-rhone-inonde",
+      "extrait": "Avec un niveau important de précipitations, les eaux du Rhône ont monté. Pour preuve, le bassin nautique de la commune a débordé à la suite du refoulement des eaux du Rhône. Le niveau d’eau atteint la buvette et le local de stockage des barques. Si pour l’heure les dégâts ne... ...pour lire la suite",
+      "score_llm": 0.9,
+      "score_cos": 0.7253468036651611
+    },
+    {
+      "titre": "Avec les échelles de crues, toujours un œil sur le Rhône",
+      "url": "https://www.ledauphine.com/environnement/2021/04/19/isere-les-avenieres-veyrins-thuellin-avec-les-echelles-de-crues-toujours-un-oeil-sur-le-rhone",
+      "extrait": "Situées sur les berges du fleuve, comme ici sur la ViaRhôna près du pont d’Evieu, les échelles de crues servent à surveiller le niveau des eaux du Rhône. Ces échelles graduées sont très utiles aux riverains, mais également au personnel de la Compagnie nationale du Rhône et à tous ceux qui surveillen",
+      "score_llm": 0.9,
+      "score_cos": 0.6835516691207886
+    },
+    {
+      "titre": "Vers une stratégie foncière à l'échelle du bassin versant de la Bourbre pour protéger les milieux aquatiques",
+      "url": "https://www.cerema.fr/fr/actualites/strategie-fonciere-echelle-du-bassin-versant-bourbre",
+      "extrait": "La rivière de la Bourbre est un affluent du Rhône qui s’écoule sur un bassin versant de 750 km² au nord du département de l’Isère. Les événements géologiques successifs ont façonné un territoire de collines et de plateaux dominant des vallées, des combes et de vastes dépressions occupées par des mar",
+      "score_llm": 0.8,
+      "score_cos": 0.7192283868789673
+    }
+  ],
+  "Zone imperméable": [
+    {
+      "titre": "Stabilisation du phénomène de retrait-gonflement des sols argileux sous les habitations : un système innovant par infiltration d’eau de pluie",
+      "url": "https://www.cerema.fr/fr/actualites/stabilisation-du-phenomene-retrait-gonflement-sols-argileux",
+      "extrait": "Le phénomène de retrait – gonflement des sols argileux (RGA) s’accentue avec le changement climatique : ces sols augmentent en volume lorsqu’ils sont gorgés d’eau et se rétractent en période de sécheresse, ce qui entraîne des mouvements de sols qui endommagent les ouvrages construits en surface. Les",
+      "score_llm": 0.9,
+      "score_cos": 0.7764161825180054
+    },
+    {
+      "titre": "Adapter les routes aux impacts du changement climatique: l'Observatoire des Routes Sinistrées par la Sécheresse",
+      "url": "https://www.cerema.fr/fr/actualites/adapter-routes-aux-impacts-du-changement-climatique",
+      "extrait": "Les sécheresses climatiques successives connues ces dernières années ont considérablement contribué à la dégradation des ouvrages en surface. Les infrastructures routières ont fortement subi les effets néfastes dus au phénomène du retrait-gonflement des argiles (RGA) qui provoque par des sollicitati",
+      "score_llm": 0.8,
+      "score_cos": 0.7811521291732788
+    },
+    {
+      "titre": "Instrumentation de la digue de La Riche : première étape vers un observatoire des interactions sols-climat",
+      "url": "https://www.cerema.fr/fr/actualites/instrumentation-digue-riche-premiere-etape-observatoire",
+      "extrait": "Les ouvrages de protection contre les inondations, notamment les digues en matériaux naturels, sont essentiels à la sécurité de nombreux territoires. Cependant, le changement climatique entraîne des événements météorologiques plus intenses et fréquents qui ont des répercussions sur les débits des co",
+      "score_llm": 0.8,
+      "score_cos": 0.7682427167892456
+    }
+  ]
+}
