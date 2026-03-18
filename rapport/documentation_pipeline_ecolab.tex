@@ -1,8 +1,7 @@
 %======================================================
-%  DOCUMENTATION PIPELINE ECOLAB — Overleaf
-%  Auteur : Enrique — Mars 2026
+%  DOCUMENTATION PIPELINE ECOLAB
 %======================================================
-\documentclass[12pt,a4paper]{report}
+\documentclass[11pt,a4paper]{report}
 
 %--- Encodage & langue ---
 \usepackage[utf8]{inputenc}
@@ -10,7 +9,7 @@
 \usepackage[french]{babel}
 
 %--- Mise en page ---
-\usepackage[top=2.5cm, bottom=2.5cm, left=2.8cm, right=2.8cm]{geometry}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
 \usepackage{setspace}
 \setstretch{1.15}
 
@@ -24,6 +23,11 @@
 \definecolor{gristexte}{RGB}{85, 85, 85}
 \definecolor{codebg}{RGB}{248, 248, 248}
 \definecolor{codeleft}{RGB}{46, 139, 87}
+\definecolor{seuilrouge}{HTML}{d73027}
+\definecolor{seuilorange}{HTML}{fc8d59}
+\definecolor{seuilgris}{HTML}{d9d9d9}
+\definecolor{seuilvertclair}{HTML}{91cf60}
+\definecolor{seuilvertfonce}{HTML}{1a9641}
 
 %--- Graphiques & figures ---
 \usepackage{graphicx}
@@ -140,7 +144,8 @@
   \rule{\textwidth}{1pt}
   \vspace{2cm}
   \begin{tabular}{ll}
-    \textbf{Auteur :}   & Enrique, Ruben, Annaelle, Charles, Rayane \\[0.3em]
+    \textbf{Auteur :}   & ALVES Enrique, PINA Ruben, FAGE Annaelle,\\
+    ~ & MAITRET Charles, YOUNES Rayane \\[0.3em]
     \textbf{Version :}  & 2.0 \\[0.3em]
     \textbf{Date :}     & Mars 2026 \\[0.3em]
     \textbf{Territoire :} & SCoT Drôme Ardèche (D007, D026, D084) \\[0.3em]
@@ -148,13 +153,40 @@
    
   \end{tabular}
   \vfill
-  {\small Ce document décrit l'intégralité de la chaîne de traitement : scraping, modélisation BERTopic, scoring LLM, analyse géospatiale, export QGIS et application web interactive.}
+%  {\small Ce document décrit l'intégralité de la chaîne de traitement : scraping, modélisation BERTopic, scoring LLM, analyse géospatiale, export QGIS et application web interactive.}
 \end{titlepage}
 
 \tableofcontents
 \clearpage
 
 %======================================================
+
+\chapter*{Introduction}
+
+L'aménagement durable des territoires nécessite aujourd'hui des outils de diagnostic précis, capables de concilier les dynamiques de développement local et les impératifs de préservation de la biodiversité. C'est dans ce contexte que s'inscrit le projet EcoLab, conçu spécifiquement pour le périmètre du Schéma de Cohérence Territoriale (SCOT) Drôme-Ardèche. Ce rapport technique, achevé en mars 2026, détaille l'intégralité d'une chaîne de traitement innovante visant à évaluer et cartographier les pressions d'artificialisation et la richesse écologique de ce territoire.
+
+\subsection*{Les objectifs de la démarche}
+
+La finalité du projet EcoLab est de fournir aux décideurs et aux planificateurs un outil cartographique interactif et méthodologiquement robuste. Nos objectifs principaux sont de :
+
+\begin{itemize}
+    \item Identifier les zones à fort potentiel écologique pour y prioriser les actions de conservation.
+    \item Orienter de manière stratégique les inventaires naturalistes sur le terrain.
+    \item Argumenter de façon chiffrée les zonages de protection dans le cadre de la révision du SCOT et des Plans Locaux d'Urbanisme intercommunaux (PLUi).
+    \item Constituer un socle de données reproductible et opposable pour les futures études d'impact environnemental.
+\end{itemize}
+
+\subsection*{Une approche hybride et multi-échelles}
+
+Pour répondre à ces exigences complexes, notre méthodologie s'articule autour de deux axes de modélisation complémentaires :
+
+\begin{enumerate}
+    \item \textbf{Une analyse sémantique et spatiale à l'échelle de la parcelle (Chapitre 1) :} Nous avons déployé une pipeline combinant l'Intelligence Artificielle et les Systèmes d'Information Géographique (SIG). En analysant un corpus d'environ 50 000 articles de presse environnementale grâce à la modélisation thématique (BERTopic) et à un modèle de langage (Mistral via Ollama), nous avons extrait un "signal territorial". Croisé à parité (50/50) avec le contexte géographique de la BD TOPO, ce signal permet d'attribuer à chaque polygone d'occupation des sols (COSIA) un score d'artificialisation allant de -2 (protecteur) à +2 (favorable au développement).
+    \item \textbf{Une modélisation statistique globale à l'échelle de l'IRIS (Chapitre 2) :} Pour compléter cette vue granulaire, nous avons construit un score continu de potentiel écologique allant de 0 à 100. Ce score repose sur une Analyse en Composantes Principales (ACP) qui synthétise 12 indicateurs environnementaux et de pression issus de trois bases de données de référence (CarHAB, BD Forêt V2 et COSIA).
+\end{enumerate}
+
+Ce document documente en toute transparence nos choix techniques et d'architecture, depuis le traitement initial des données jusqu'à l'export final sous QGIS et le développement de notre application web interactive.
+
 \chapter{BERTopic}
 
 \section{Introduction et vue d'ensemble}
@@ -174,21 +206,24 @@ Le score final est une combinaison pondérée 50/50 des deux sources, et est vis
 
 \begin{figure}[H]
 \centering
+% \resizebox adapte l'image à la largeur de la page (\textwidth)
+\resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[
-  node distance=0.8cm and 1.2cm,
-  box/.style={rectangle, rounded corners=4pt, draw, minimum width=4.2cm, minimum height=0.85cm, align=center, font=\small},
+  node distance=0.8cm and 0.5cm, % Espacement global réduit
+  % minimum width légèrement réduit à 3.8cm
+  box/.style={rectangle, rounded corners=4pt, draw, minimum width=3.8cm, minimum height=0.85cm, align=center, font=\small},
   data/.style={box, fill=SkyBlue!20, draw=RoyalBlue!60},
   proc/.style={box, fill=ForestGreen!15, draw=ForestGreen!60},
-  out/.style={box, fill=Orange!15, draw=Orange!60},
+  outs/.style={box, fill=Orange!15, draw=Orange!60},
   arr/.style={-{Stealth[length=5pt]}, thick},
   grp/.style={draw=gray!40, dashed, rounded corners=6pt, inner sep=8pt}
 ]
 
-% Données sources
+% Données sources (Espacement réduit à 0.5cm)
 \node[data] (arts) {Articles presse\\(7 sources CSV)};
-\node[data, right=1.5cm of arts] (cosia) {Tuiles COSIA\\(3 dép., $\sim$15M poly.)};
-\node[data, right=1.5cm of cosia] (bdtopo) {\bdtopo{} SHP\\(3 dép., 14 catégories)};
-\node[data, right=1.5cm of bdtopo] (scot) {Masque SCoT\\(Parcelles\_SCOT.gpkg)};
+\node[data, right=0.5cm of arts] (cosia) {Tuiles COSIA\\(3 dép., $\sim$15M poly.)};
+\node[data, right=0.5cm of cosia] (bdtopo) {\bdtopo{} SHP\\(3 dép., 14 catégories)};
+\node[data, right=0.5cm of bdtopo] (scot) {Masque SCoT\\(Parcelles\_SCOT.gpkg)};
 
 % BERTopic
 \node[proc, below=1.2cm of arts] (bertopic) {\textbf{BERTopic}\\Modélisation thématique};
@@ -198,8 +233,8 @@ Le score final est une combinaison pondérée 50/50 des deux sources, et est vis
 \node[proc, below=1cm of bertopic] (e01) {\textbf{Étape 01}\\Scoring Ollama/Mistral\\($-2$ à $+2$ par article)};
 \draw[arr] (bertopic) -- (e01);
 
-% Étape 03
-\node[proc, right=3.5cm of e01] (e03) {\textbf{Étape 03}\\Score COSIA géospatial\\(topic $\rightarrow$ classe)};
+% Étape 03 (Rapproché de l'étape 01)
+\node[proc, right=2cm of e01] (e03) {\textbf{Étape 03}\\Score COSIA géospatial\\(topic $\rightarrow$ classe)};
 \draw[arr] (e01) -- (e03);
 \draw[arr] (cosia) -- (e03);
 \draw[arr] (scot) -- (e03);
@@ -213,8 +248,8 @@ Le score final est une combinaison pondérée 50/50 des deux sources, et est vis
 \node[proc, below=1cm of e04] (e05) {\textbf{Étape 05}\\Export QGIS\\(quintiles + QML)};
 \draw[arr] (e04) -- (e05);
 
-% Étapes 06
-\node[proc, left=2cm of e05] (e06a) {\textbf{Étape 06a}\\Articles par parcelle\\(embeddings + LLM)};
+% Étapes 06 (Rapproché de l'étape 05)
+\node[proc, left=1cm of e05] (e06a) {\textbf{Étape 06a}\\Articles par parcelle\\(embeddings + LLM)};
 \node[proc, below=0.8cm of e06a] (e06b) {\textbf{Étape 06b}\\Résumés \bdtopo{}\\(combinaisons)};
 \node[proc, below=0.8cm of e06b] (e06c) {\textbf{Étape 06c}\\Injection GPKG\\(resume\_bdtopo)};
 \draw[arr] (e05) -- (e06a);
@@ -222,15 +257,16 @@ Le score final est une combinaison pondérée 50/50 des deux sources, et est vis
 \draw[arr] (e06b) -- (e06c);
 
 % Output GPKG
-\node[out, below=1cm of e06c] (gpkg) {\textbf{GPKG Final}\\COSIA\_BD\_ecolab\_carte\_finale};
+\node[outs, below=1cm of e06c] (gpkg) {\textbf{GPKG Final}\\COSIA\_BD\_ecolab\_carte\_finale};
 \draw[arr] (e06c) -- (gpkg);
 \draw[arr] (e05) -- (gpkg);
 
-% App web
-\node[out, right=2cm of gpkg] (app) {\textbf{Application web}\\Streamlit + Flask\\+ Leaflet.js};
+% App web (Rapproché du GPKG)
+\node[outs, right=1.5cm of gpkg] (app) {\textbf{Application web}\\Streamlit + Flask\\+ Leaflet.js};
 \draw[arr] (gpkg) -- (app);
 
-\end{tikzpicture}
+\end{tikzpicture}%
+}
 \caption{Schéma général de la pipeline EcoLab v2}
 \end{figure}
 
@@ -238,8 +274,9 @@ Le score final est une combinaison pondérée 50/50 des deux sources, et est vis
 
 \begin{table}[H]
 \centering
-\begin{tabular}{lrl}
+\begin{tabular}{lcl}
 \toprule
+\rowcolor{seuilgris!75}
 \textbf{Composant} & \textbf{Volume} & \textbf{Remarques} \\
 \midrule
 Articles de presse & $\sim$50\,000 & Dédupliqués par URL \\
@@ -279,6 +316,7 @@ Le workflow est :
 \centering
 \begin{tabular}{lll}
 \toprule
+\rowcolor{seuilgris!75}
 \textbf{Source} & \textbf{Fichier CSV} & \textbf{Type} \\
 \midrule
 Cerema & \code{cerema\_actualites.csv} & Actualités institutionnelles \\
@@ -391,6 +429,7 @@ Pour chaque article du corpus (après assignation des topics par BERTopic), un s
 \centering
 \begin{tabular}{>{\centering}p{1.5cm}p{10cm}}
 \toprule
+\rowcolor{seuilgris!75}
 \textbf{Score} & \textbf{Signification} \\
 \midrule
 \rowcolor{scoreQ1!30} $-2$ & Résiste fortement à l'artificialisation (biodiversité, qualité de l'eau, espaces agricoles, zones protégées) \\
@@ -453,16 +492,17 @@ Toutes les 50 articles, le fichier \code{docs\_scored\_v2.csv} est sauvegardé. 
 \centering
 \begin{tabular}{lll}
 \toprule
+\rowcolor{seuilgris!75}
 \textbf{Couleur} & \textbf{Hex} & \textbf{Seuil} \\
 \midrule
-\cellcolor{scoreQ1!60}Rouge foncé & \code{\#d73027} & $\leq -0.5$ (très protecteur) \\
-\cellcolor{scoreQ4!40}Orange & \code{\#fc8d59} & $-0.5$ à $0$ (protecteur) \\
-\cellcolor{scoreQ3!60}Gris & \code{\#d9d9d9} & $0$ (neutre) \\
-\cellcolor{scoreQ2!40}Vert clair & \code{\#91cf60} & $0$ à $0.5$ (développement) \\
-\cellcolor{scoreQ1!40}Vert foncé & \code{\#1a9641} & $\geq 0.5$ (très développement) \\
+\cellcolor{seuilrouge!40} Rouge foncé & \textbf{\#d73027} & $\leq -0.5$ (très protecteur) \\
+\cellcolor{seuilorange!40} Orange & \textbf{\#fc8d59} & $-0.5$ à $0$ (protecteur) \\
+\cellcolor{seuilgris!50} Gris & \textbf{\#d9d9d9} & $0$ (neutre) \\
+\cellcolor{seuilvertclair!40} Vert clair & \textbf{\#91cf60} & $0$ à $0.5$ (développement) \\
+\cellcolor{seuilvertfonce!40} Vert foncé & \textbf{\#1a9641} & $\geq 0.5$ (très développement) \\
 \bottomrule
 \end{tabular}
-\caption{Codage couleur des scores de topic}
+\caption{Codage couleur des scores de topic (teintes pastel)}
 \end{table}
 
 %======================================================
@@ -526,6 +566,7 @@ Enrichir chaque polygone COSIA avec son contexte géographique \bdtopo{} : 14 co
 \centering
 \begin{tabular}{lll}
 \toprule
+\rowcolor{seuilgris!75}
 \textbf{Catégorie} & \textbf{Colonne} & \textbf{Type de zone} \\
 \midrule
 Natura 2000 & \code{bdtopo\_NATURA2000} & Protection européenne \\
@@ -590,6 +631,7 @@ Le score final est discrétisé en 5 classes par quintiles (20\%, 40\%, 60\%, 80
 \centering
 \begin{tabular}{llll}
 \toprule
+\rowcolor{seuilgris!75}
 \textbf{Quintile} & \textbf{Couleur} & \textbf{Hex} & \textbf{Signification} \\
 \midrule
 \rowcolor{scoreQ1!20} Q1 (0–20\%) & Vert foncé & \code{\#1a7a2e} & Très protecteur \\
@@ -745,7 +787,7 @@ L'application combine trois couches :
 \node[layer, fill=RoyalBlue!20, draw=RoyalBlue] (front) {\textbf{Frontend — Leaflet.js (JavaScript)}\\ Rendu cartographique, pan/zoom, sélection de parcelle};
 \node[layer, fill=ForestGreen!15, draw=ForestGreen, below=0.7cm of front] (mid) {\textbf{Mid-tier — Flask (Python, port 5050)}\\ API REST : GeoJSON par bbox, détail par FID, filtres};
 \node[layer, fill=Orange!15, draw=Orange, below=0.7cm of mid] (back) {\textbf{Backend — SQLite3 + Index R-Tree}\\ GPKG 29.7 Go, 15M polygones, 15 index SQL};
-\node[layer, fill=Purple!10, draw=Purple!60, left=0.3cm of front, minimum width=3cm, xshift=-4.5cm] (st) {\textbf{Streamlit}\\ Sidebar filtres\\ Panel détail};
+\node[layer, fill=Purple!10, draw=Purple!60, left=0.3cm of front, minimum width=3cm, xshift=-2.5cm] (st) {\textbf{Streamlit}\\ Sidebar filtres\\ Panel détail};
 
 \draw[arr] (front) -- (mid) node[midway, right] {\small HTTP};
 \draw[arr] (mid) -- (back) node[midway, right] {\small SQLite};
@@ -758,8 +800,9 @@ L'application combine trois couches :
 
 \begin{table}[H]
 \centering
-\begin{tabular}{lll}
+\begin{tabular}{ccc}
 \toprule
+\rowcolor{seuilgris!75}
 \textbf{Route} & \textbf{Méthode} & \textbf{Rôle} \\
 \midrule
 \code{/api/features} & GET & GeoJSON des polygones dans la bbox courante \\
@@ -877,8 +920,9 @@ L.rectangle(SCOT_BOUNDS, {color:'#1976D2', dashArray:'8 5', weight:2})
 
 \begin{table}[H]
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{lc}
 \toprule
+\rowcolor{seuilgris!75}
 \textbf{Opération} & \textbf{Temps typique} \\
 \midrule
 Requête bbox + GeoJSON (5000 poly.) & $<$ 200 ms \\
@@ -977,8 +1021,9 @@ TOPIC_BDTOPO_MAP = {
 
 \begin{table}[H]
 \centering
-\begin{tabular}{lll}
+\begin{tabular}{cll}
 \toprule
+\rowcolor{seuilgris!75}
 \textbf{Ordre} & \textbf{Script} & \textbf{Durée approx.} \\
 \midrule
 0 & \code{bertopic\_train\_save.py} & 30–60 min \\
@@ -1091,6 +1136,7 @@ Pour joindre \code{COSIA\_articles\_par\_classe.csv} à la couche vecteur :
 \centering
 \begin{tabular}{p{4cm}p{4cm}p{5cm}}
 \toprule
+\rowcolor{seuilgris!75}
 \textbf{Choix} & \textbf{Alternative} & \textbf{Justification} \\
 \midrule
 \gpkg{} (SQLite) & PostGIS & Pas de serveur requis, portable, R-Tree intégré \\
@@ -1142,7 +1188,7 @@ Le score est construit à partir de trois sources de données officielles compl�
 \vspace{0.6cm}
 \begin{tabularx}{\textwidth}{L{2.5cm} L{3.5cm} X}
   \toprule
-  \rowcolor{vert}
+  \rowcolor{vert!85}
   \textcolor{white}{\textbf{Source}} &
   \textcolor{white}{\textbf{Description}} &
   \textcolor{white}{\textbf{Variables extraites}} \\
@@ -1163,7 +1209,7 @@ Le score est construit à partir de trois sources de données officielles compl�
 
 \begin{longtable}{L{3cm} L{1.8cm} L{5cm} L{2.5cm}}
   \toprule
-  \rowcolor{vert}
+  \rowcolor{vert!85}
   \textcolor{white}{\textbf{Indicateur}} &
   \textcolor{white}{\textbf{Source}} &
   \textcolor{white}{\textbf{Définition}} &
@@ -1237,7 +1283,7 @@ L'ACP est réalisée avec le package \texttt{FactoMineR} sur données standardis
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.78\textwidth]{acp final.png}
+  \includegraphics[width=0.9\textwidth]{acp final.png}
   \caption{Cercle des corrélations -- ACP finale CarHAB + BD Forêt + COSIA}
 \end{figure}
 
@@ -1254,7 +1300,7 @@ Chaque flèche représente une variable. La \textbf{longueur} indique la qualit�
 
 \begin{tabularx}{\textwidth}{L{1.5cm} L{1.8cm} L{5cm} X}
   \toprule
-  \rowcolor{vert}
+  \rowcolor{vert!85}
   \textcolor{white}{\textbf{Axe}} &
   \textcolor{white}{\textbf{Variance}} &
   \textcolor{white}{\textbf{Variables dominantes}} &
@@ -1285,7 +1331,7 @@ Avant de combiner les axes, chaque axe est vérifié pour s'assurer que la direc
 
 \begin{tabularx}{\textwidth}{L{1.5cm} L{1.8cm} X}
   \toprule
-  \rowcolor{vert}
+  \rowcolor{vert!85}
   \textcolor{white}{\textbf{Axe}} &
   \textcolor{white}{\textbf{Inversion ?}} &
   \textcolor{white}{\textbf{Justification}} \\
@@ -1357,7 +1403,7 @@ Si les scores bruts vont de $-3{,}2$ (pire IRIS, vallée du Rhône) à $+4{,}8$ 
 \vspace{0.3cm}
 \begin{tabularx}{\textwidth}{L{2.5cm} L{1.8cm} X L{2cm}}
   \toprule
-  \rowcolor{vert}
+  \rowcolor{vert!85}
   \textcolor{white}{\textbf{IRIS}} &
   \textcolor{white}{\textbf{Score brut}} &
   \textcolor{white}{\textbf{Calcul}} &
@@ -1386,7 +1432,7 @@ Les poids utilisés (variances expliquées par l'ACP) sont justifiés mathémati
 \vspace{0.3cm}
 \begin{tabularx}{\textwidth}{L{3.5cm} L{4cm} X}
   \toprule
-  \rowcolor{vert}
+  \rowcolor{vert!85}
   \textcolor{white}{\textbf{Scénario}} &
   \textcolor{white}{\textbf{Poids Dim.1 / Dim.2 / Dim.3}} &
   \textcolor{white}{\textbf{Corrélation avec score ACP}} \\
@@ -1406,7 +1452,7 @@ Toutes les corrélations dépassent \textbf{0,90} -- seuil admis pour la robuste
 
 \begin{tabularx}{\textwidth}{L{4.5cm} L{1.8cm} X}
   \toprule
-  \rowcolor{vert}
+  \rowcolor{vert!85}
   \textcolor{white}{\textbf{Comparaison}} &
   \textcolor{white}{\textbf{Corrélation}} &
   \textcolor{white}{\textbf{Interprétation}} \\
@@ -1427,7 +1473,7 @@ Toutes les corrélations dépassent \textbf{0,90} -- seuil admis pour la robuste
 
 \begin{tabularx}{\textwidth}{L{2.5cm} L{2cm} X}
   \toprule
-  \rowcolor{vert}
+  \rowcolor{vert!85}
   \textcolor{white}{\textbf{Statistique}} &
   \textcolor{white}{\textbf{Valeur}} &
   \textcolor{white}{\textbf{Interprétation}} \\
@@ -1448,7 +1494,6 @@ Toutes les corrélations dépassent \textbf{0,90} -- seuil admis pour la robuste
 \textbf{Couverture :} 281 IRIS, 0 donnée manquante. La couverture complète est obtenue grâce à COSIA qui couvre l'intégralité du territoire.
 
 \subsection{Carte du score de potentiel écologique}
-
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.85\textwidth]{score final.png}
@@ -1476,4 +1521,24 @@ Toutes les corrélations dépassent \textbf{0,90} -- seuil admis pour la robuste
   \item \textbf{Zones humides sous-représentées dans l'ACP :} rares sur le territoire, leur variance spatiale est faible même si leur valeur écologique est forte.
 \end{itemize}
 %======================================================
+
+\chapter*{Conclusion}
+
+Le projet EcoLab apporte une réponse technique innovante et exhaustive pour l'évaluation de l'artificialisation et du potentiel écologique sur le territoire du SCOT Drôme-Ardèche. En combinant des approches méthodologiques complémentaires, ce rapport démontre la faisabilité et la pertinence d'un outil d'aide à la décision à très haute résolution :
+
+\begin{itemize}
+    \item \textbf{Une modélisation hybride à l'échelle parcellaire :} L'intégration de l'Intelligence Artificielle (modélisation thématique BERTopic et scoring LLM via Mistral) à l'analyse spatiale (croisements avec la BD TOPO et COSIA) permet de capturer avec finesse le signal environnemental local. Ces traitements aboutissent à la création d'une cartographie web interactive performante, facilitant l'exploration des enjeux de chaque parcelle.
+    \item \textbf{Un score statistique composite à l'échelle de l'IRIS :} Grâce à l'Analyse en Composantes Principales (ACP) exploitant les données officielles (CarHAB, BD Forêt, COSIA), 12 indicateurs ont été synthétisés pour créer un score robuste de potentiel écologique, échelonné de 0 à 100.
+\end{itemize}
+
+Ces travaux se matérialisent par des livrables concrets, notamment des bases de données optimisées (GeoPackage) et des styles automatisés pour QGIS. Ils offrent aux décideurs une base reproductible pour identifier les zones à fort potentiel, orienter les inventaires naturalistes et argumenter les zonages de protection dans le cadre des révisions du SCOT et des PLUi.
+
+Toutefois, pour consolider et faire évoluer ce dispositif, les prochaines itérations devront prendre en compte certaines limites inhérentes aux données et aux modèles actuels. Il s'agira notamment :
+
+\begin{itemize}
+    \item D'intégrer des métriques de connectivité écologique, essentielles pour évaluer la valeur réelle d'une zone au sein de son réseau.
+    \item De s'appuyer sur des données forestières plus récentes pour capturer les dynamiques actuelles (incendies, coupes), la BD Forêt utilisée datant de 2014.
+    \item De mieux pondérer la valeur des zones humides, dont l'importance écologique est majeure malgré leur sous-représentation mathématique dans l'ACP actuelle.
+\end{itemize}
+
 \end{document}
