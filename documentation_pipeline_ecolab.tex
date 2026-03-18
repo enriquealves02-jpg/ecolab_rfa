@@ -2,7 +2,7 @@
 %  DOCUMENTATION PIPELINE ECOLAB — Overleaf
 %  Auteur : Enrique — Mars 2026
 %======================================================
-\documentclass[12pt,a4paper]{article}
+\documentclass[12pt,a4paper]{report}
 
 %--- Encodage & langue ---
 \usepackage[utf8]{inputenc}
@@ -17,6 +17,13 @@
 %--- Polices & couleurs ---
 \usepackage{lmodern}
 \usepackage[dvipsnames,svgnames,table]{xcolor}
+% ─── Couleurs ───
+\definecolor{vert}{RGB}{46, 139, 87}
+\definecolor{vertfonce}{RGB}{31, 92, 58}
+\definecolor{vertclair}{RGB}{240, 247, 240}
+\definecolor{gristexte}{RGB}{85, 85, 85}
+\definecolor{codebg}{RGB}{248, 248, 248}
+\definecolor{codeleft}{RGB}{46, 139, 87}
 
 %--- Graphiques & figures ---
 \usepackage{graphicx}
@@ -33,6 +40,9 @@
 \usepackage{array}
 \usepackage{multirow}
 \usepackage{colortbl}
+% ─── Tableaux ───
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\renewcommand{\arraystretch}{1.4}
 
 %--- Listes & puces ---
 \usepackage{enumitem}
@@ -115,7 +125,7 @@
 \begin{titlepage}
   \centering
   \vspace*{2cm}
-  {\Huge\bfseries Pipeline EcoLab\par}
+  {\Huge\bfseries Rapport EcoLab\par}
   \vspace{0.5em}
   {\Large\color{NavyBlue} Documentation technique complète\par}
   \vspace{2cm}
@@ -124,18 +134,18 @@
   {\large
   De la modélisation thématique (BERTopic) \\[0.3em]
   à la cartographie interactive \\[0.3em]
-  des scores d'artificialisation du territoire SCoT \par
+  des scores de préservation du territoire du SCoT \par
   }
   \vspace{1em}
   \rule{\textwidth}{1pt}
   \vspace{2cm}
   \begin{tabular}{ll}
-    \textbf{Auteur :}   & Enrique \\[0.3em]
+    \textbf{Auteur :}   & Enrique, Ruben, Annaelle, Charles, Rayane \\[0.3em]
     \textbf{Version :}  & 2.0 \\[0.3em]
     \textbf{Date :}     & Mars 2026 \\[0.3em]
     \textbf{Territoire :} & SCoT Drôme Ardèche (D007, D026, D084) \\[0.3em]
     \textbf{Corpus :}   & $\approx$50\,000 articles de presse environnementale \\[0.3em]
-    \textbf{Données géo :} & $\approx$15 millions de polygones COSIA \\
+   
   \end{tabular}
   \vfill
   {\small Ce document décrit l'intégralité de la chaîne de traitement : scraping, modélisation BERTopic, scoring LLM, analyse géospatiale, export QGIS et application web interactive.}
@@ -145,6 +155,8 @@
 \clearpage
 
 %======================================================
+\chapter{BERTopic}
+
 \section{Introduction et vue d'ensemble}
 
 \subsection{Objectif du projet}
@@ -1070,6 +1082,8 @@ Pour joindre \code{COSIA\_articles\_par\_classe.csv} à la couche vecteur :
   \item Champ cible : \code{classe}
 \end{enumerate}
 
+ 
+
 %======================================================
 \section{Choix techniques et justifications}
 
@@ -1110,5 +1124,356 @@ ThreadPool I/O & ProcessPool & Évite la sérialisation GeoDataFrame, GIL ok pou
   \item[c-TF-IDF] Class TF-IDF — variante de TF-IDF calculée au niveau de chaque classe (topic) plutôt que de chaque document.
 \end{description}
 
+\chapter{Score par ACP}
+\section{Contexte et Objectifs}
+
+Ce rapport présente la démarche de construction d'un score de potentiel écologique par maille IRIS (Ilots Regroupés pour l'Information Statistique) sur le territoire du SCoT. L'objectif est de disposer d'un outil cartographique chiffré et méthodologiquement solide pour :
+
+\begin{itemize}[leftmargin=1.5cm]
+  \item Identifier les zones à fort potentiel écologique et prioriser les actions de conservation
+  \item Orienter les inventaires naturalistes de terrain vers les secteurs les plus prometteurs
+  \item Argumenter les zonages de protection dans le cadre de la révision du SCoT et des PLUi
+  \item Fournir une base reproductible et opposable pour les études d'impact environnemental
+\end{itemize}
+
+\vspace{0.4cm}
+Le score est construit à partir de trois sources de données officielles complémentaires, agrégées à l'échelle de l'IRIS via des intersections géométriques, puis synthétisées par une Analyse en Composantes Principales (ACP).
+
+\vspace{0.6cm}
+\begin{tabularx}{\textwidth}{L{2.5cm} L{3.5cm} X}
+  \toprule
+  \rowcolor{vert}
+  \textcolor{white}{\textbf{Source}} &
+  \textcolor{white}{\textbf{Description}} &
+  \textcolor{white}{\textbf{Variables extraites}} \\
+  \midrule
+  \rowcolor{vertclair}
+  CarHAB & Cartographie nationale des habitats naturels &
+    5 indicateurs : milieux enjeu, zones humides, Shannon, nb types, pression agri \\
+  BD Forêt V2 IGN & Formations végétales forestières -- 6 départements assemblés &
+    3 indicateurs : feuillus enjeu, conifères, nb essences \\
+  \rowcolor{vertclair}
+  COSIA & Classification IA occupation du sol (7~Go, 8,8M polygones) &
+    4 indicateurs : végétation naturelle, artificialisation, agriculture, Shannon \\
+  \bottomrule
+\end{tabularx}
+
+% ═══════════════════════════════════════════════
+\section{Les 12 Indicateurs}
+
+\begin{longtable}{L{3cm} L{1.8cm} L{5cm} L{2.5cm}}
+  \toprule
+  \rowcolor{vert}
+  \textcolor{white}{\textbf{Indicateur}} &
+  \textcolor{white}{\textbf{Source}} &
+  \textcolor{white}{\textbf{Définition}} &
+  \textcolor{white}{\textbf{Rôle}} \\
+  \midrule
+  \endfirsthead
+  \toprule
+  \rowcolor{vert}
+  \textcolor{white}{\textbf{Indicateur}} &
+  \textcolor{white}{\textbf{Source}} &
+  \textcolor{white}{\textbf{Définition}} &
+  \textcolor{white}{\textbf{Rôle}} \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+
+  \rowcolor{vertclair}
+  \texttt{pct\_milieu\_enjeu} & CarHAB &
+    \% prairies, zones humides, milieux ouverts, autres pérennes & Positif fort \\
+
+  \texttt{pct\_zone\_humide} & CarHAB &
+    \% humidité édaphique élevée (nappe stagnante, circulante, détrempé) & Positif fort \\
+
+  \rowcolor{vertclair}
+  \texttt{shannon\_milieu} & CarHAB &
+    Indice de Shannon sur les types de milieux $H = -\sum p_i \ln(p_i)$ & Positif -- diversité \\
+
+  \texttt{nb\_types\_milieu} & CarHAB &
+    Nombre de types de milieux distincts par IRIS & Positif -- richesse \\
+
+  \rowcolor{vertclair}
+  \texttt{pct\_occup\_agri} & CarHAB &
+    \% occupation agricole intensive & Négatif -- pression \\
+
+  \texttt{pct\_feuillu\_enjeu} & BD Forêt &
+    \% feuillus autochtones (hêtre, chênes, châtaignier, mélanges) & Positif fort \\
+
+  \rowcolor{vertclair}
+  \texttt{pct\_conifere} & BD Forêt &
+    \% conifères (pin sylvestre, maritime, douglas, sapin\ldots) & Ambigu \\
+
+  \texttt{nb\_essences} & BD Forêt &
+    Nombre d'essences distinctes par IRIS (hors NC/NR) & Positif -- diversité \\
+
+  \rowcolor{vertclair}
+  \texttt{pct\_veg\_naturelle} & COSIA &
+    \% Feuillu + Pelouse + Broussaille + Surface eau & Positif fort \\
+
+  \texttt{pct\_artificialise} & COSIA &
+    \% Bâtiment + Zone imperméable + Serre + Piscine & Négatif fort \\
+
+  \rowcolor{vertclair}
+  \texttt{pct\_agri\_cosia} & COSIA &
+    \% Culture + Terre labourée + Vigne & Négatif -- pression \\
+
+  \texttt{shannon\_cosia} & COSIA &
+    Indice de Shannon sur les 15 classes COSIA & Positif -- diversité \\
+\end{longtable}
+
+% ═══════════════════════════════════════════════
+\section{Analyse en Composantes Principales}
+
+\subsection{Principe}
+
+Les 12 indicateurs ne sont pas indépendants -- certains capturent des informations redondantes (\texttt{shannon\_milieu} et \texttt{nb\_types\_milieu} sont très corrélés). L'ACP synthétise ces 12 dimensions en axes indépendants ordonnés par quantité d'information capturée. \textbf{Dim.1} est la direction qui différencie le mieux les IRIS entre eux, \textbf{Dim.2} la deuxième direction la plus informative, et ainsi de suite.
+
+L'ACP est réalisée avec le package \texttt{FactoMineR} sur données standardisées (\texttt{scale.unit = TRUE}) pour que les 12 variables de différentes unités contribuent de manière équivalente.
+
+\subsection{Résultat de l'ACP finale}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.78\textwidth]{acp final.png}
+  \caption{Cercle des corrélations -- ACP finale CarHAB + BD Forêt + COSIA}
+\end{figure}
+
+\subsubsection*{Comment lire ce cercle}
+
+Chaque flèche représente une variable. La \textbf{longueur} indique la qualité de représentation sur ces deux axes -- une flèche longue (proche du bord) signifie que la variable est bien capturée par Dim.1 et Dim.2. \textbf{L'angle} entre deux flèches indique la corrélation : flèches parallèles = corrélées positivement, flèches opposées = corrélées négativement, flèches perpendiculaires = indépendantes.
+
+\begin{tcolorbox}[infobox]
+  \textbf{Note :} \texttt{pct\_zone\_humide} présente une flèche courte car elle vit principalement sur Dim.3 (non affiché sur ce cercle). Elle contribue au score final mais est mal représentée sur ce plan Dim.1/Dim.2.
+\end{tcolorbox}
+
+\vspace{0.4cm}
+\subsubsection*{Les trois axes}
+
+\begin{tabularx}{\textwidth}{L{1.5cm} L{1.8cm} L{5cm} X}
+  \toprule
+  \rowcolor{vert}
+  \textcolor{white}{\textbf{Axe}} &
+  \textcolor{white}{\textbf{Variance}} &
+  \textcolor{white}{\textbf{Variables dominantes}} &
+  \textcolor{white}{\textbf{Interprétation}} \\
+  \midrule
+  \rowcolor{vertclair}
+  Dim.1 & 39,4\% &
+    nb\_types\_milieu (18,4\%), shannon\_milieu (18,2\%), shannon\_cosia (17,2\%) &
+    Diversité et naturalité globale -- \textbf{axe principal} \\
+  Dim.2 & 17,7\% &
+    nb\_essences (24,4\%), pct\_feuillu\_enjeu (21,7\%), pct\_artificialise (21,0\%) &
+    Qualité forestière vs artificialisation \\
+  \rowcolor{vertclair}
+  Dim.3 & $\sim$10,0\% &
+    pct\_occup\_agri (29,8\%), pct\_zone\_humide (21,2\%) &
+    Zones humides vs pression agricole \\
+  \textbf{Total} & \textbf{57,1\%} & --- &
+    Plus de la moitié de la variance totale capturée \\
+  \bottomrule
+\end{tabularx}
+
+% ═══════════════════════════════════════════════
+\section{Construction du Score}
+
+\subsection{Orientation des axes}
+
+Avant de combiner les axes, chaque axe est vérifié pour s'assurer que la direction positive correspond à un fort potentiel écologique :
+
+\begin{tabularx}{\textwidth}{L{1.5cm} L{1.8cm} X}
+  \toprule
+  \rowcolor{vert}
+  \textcolor{white}{\textbf{Axe}} &
+  \textcolor{white}{\textbf{Inversion ?}} &
+  \textcolor{white}{\textbf{Justification}} \\
+  \midrule
+  \rowcolor{vertclair}
+  Dim.1 & Non &
+    \texttt{shannon} (+0,93), \texttt{nb\_types} (+0,93), \texttt{shannon\_cosia} (+0,90) tous positifs \\
+  Dim.2 & Oui (signe $-$) &
+    \texttt{pct\_artificialise} $= -0{,}67$ : sans inversion un IRIS urbain aurait une coordonnée négative qui le pénaliserait dans le mauvais sens \\
+  \rowcolor{vertclair}
+  Dim.3 & Non &
+    \texttt{pct\_zone\_humide} $= +0{,}54$ (positif), \texttt{pct\_occup\_agri} $= -0{,}64$ (négatif) \\
+  \bottomrule
+\end{tabularx}
+
+\subsection{Formule du score brut}
+
+\begin{lstlisting}
+# Variances expliquees des 3 premiers axes
+variances_final <- res_pca_final$eig[1:3, "percentage of variance"]
+# => c(39.4, 17.7, 10.0)
+
+# Coordonnees des IRIS sur les axes
+coords_final <- as.data.frame(res_pca_final$ind$coord)
+
+# Matrice : Dim.2 inversee (signe moins)
+score_matrix <- cbind(
+   coords_final$Dim.1,   # naturalite/diversite       -- non inverse
+  -coords_final$Dim.2,   # foret vs artificialisation -- INVERSE
+   coords_final$Dim.3    # zones humides vs agri      -- non inverse
+)
+
+# Produit matriciel : somme ponderee / variance cumulee
+df_final$score_brut <- as.vector(
+  score_matrix %*% variances_final / sum(variances_final)
+)
+\end{lstlisting}
+
+Le produit matriciel calcule pour chaque IRIS :
+
+\begin{equation}
+  \text{Score brut} = \frac{\text{Dim.1} \times 39{,}4 + (-\text{Dim.2}) \times 17{,}7 + \text{Dim.3} \times 10{,}0}{67{,}1}
+\end{equation}
+
+\subsection{Normalisation 0--100 et rôle du min/max}
+
+\begin{lstlisting}
+df_final$score_biodiv_final <- with(df_final,
+  (score_brut - min(score_brut)) / (max(score_brut) - min(score_brut)) * 100
+)
+\end{lstlisting}
+
+\begin{equation}
+  \text{Score final} = \frac{\text{Score brut} - \min(\text{Score brut})}{\max(\text{Score brut}) - \min(\text{Score brut})} \times 100
+\end{equation}
+
+\subsubsection*{Rôle du minimum}
+
+$\min(\text{Score brut})$ est la valeur du score brut de l'\textbf{IRIS le moins écologiquement riche} du territoire -- celui qui combine le moins de milieux naturels, le plus de pression agricole et le plus d'artificialisation. En soustrayant ce minimum à tous les scores, on ramène cet IRIS à exactement 0. Tous les autres IRIS ont désormais un score positif proportionnel à leur écart avec le pire IRIS.
+
+\subsubsection*{Rôle du maximum}
+
+$\max(\text{Score brut}) - \min(\text{Score brut})$ est l'\textbf{étendue totale} des scores bruts -- la distance entre le pire et le meilleur IRIS du territoire. En divisant par cette étendue, on compresse toute la variabilité dans un intervalle $[0, 1]$, puis la multiplication par 100 donne l'échelle $[0, 100]$.
+
+\subsubsection*{Exemple numérique}
+
+Si les scores bruts vont de $-3{,}2$ (pire IRIS, vallée du Rhône) à $+4{,}8$ (meilleur IRIS, massif naturel), l'étendue est $4{,}8 - (-3{,}2) = 8{,}0$ :
+
+\vspace{0.3cm}
+\begin{tabularx}{\textwidth}{L{2.5cm} L{1.8cm} X L{2cm}}
+  \toprule
+  \rowcolor{vert}
+  \textcolor{white}{\textbf{IRIS}} &
+  \textcolor{white}{\textbf{Score brut}} &
+  \textcolor{white}{\textbf{Calcul}} &
+  \textcolor{white}{\textbf{Score final}} \\
+  \midrule
+  \rowcolor{vertclair}
+  Pire IRIS & $-3{,}2$ & $\frac{-3{,}2 - (-3{,}2)}{8{,}0} \times 100 = \frac{0}{8} \times 100$ & \textbf{0} \\
+  IRIS médian & $+0{,}8$ & $\frac{0{,}8 - (-3{,}2)}{8{,}0} \times 100 = \frac{4{,}0}{8} \times 100$ & \textbf{50} \\
+  \rowcolor{vertclair}
+  Meilleur IRIS & $+4{,}8$ & $\frac{4{,}8 - (-3{,}2)}{8{,}0} \times 100 = \frac{8{,}0}{8} \times 100$ & \textbf{100} \\
+  \bottomrule
+\end{tabularx}
+
+\vspace{0.4cm}
+\begin{tcolorbox}[infobox]
+  \textbf{Conséquence importante :} le score 0 et le score 100 sont des valeurs \textbf{relatives au territoire du SCoT}. Le score 100 signifie ``l'IRIS le plus riche de ce territoire'' et non ``biodiversité parfaite''. Ce score ne peut pas être comparé directement avec un autre territoire sans recalcul complet sur la base fusionnée.
+\end{tcolorbox}
+
+% ═══════════════════════════════════════════════
+\section{Validations du Score}
+
+\subsection{Test de sensibilité des pondérations}
+
+Les poids utilisés (variances expliquées par l'ACP) sont justifiés mathématiquement mais ne sont pas le seul choix possible. Trois scénarios ont été testés :
+
+\vspace{0.3cm}
+\begin{tabularx}{\textwidth}{L{3.5cm} L{4cm} X}
+  \toprule
+  \rowcolor{vert}
+  \textcolor{white}{\textbf{Scénario}} &
+  \textcolor{white}{\textbf{Poids Dim.1 / Dim.2 / Dim.3}} &
+  \textcolor{white}{\textbf{Corrélation avec score ACP}} \\
+  \midrule
+  \rowcolor{vertclair}
+  ACP -- retenu & 39,4\% / 17,7\% / 10,0\% & 1,000 (référence) \\
+  Poids égaux & 33\% / 33\% / 33\% & 0,918 \\
+  \rowcolor{vertclair}
+  Dim.1 ultra-dominante & 60\% / 25\% / 15\% & 0,9998 \\
+  \bottomrule
+\end{tabularx}
+
+\vspace{0.3cm}
+Toutes les corrélations dépassent \textbf{0,90} -- seuil admis pour la robustesse d'un score composite. Le classement des IRIS est stable quel que soit le schéma de pondération.
+
+\subsection{Contribution de chaque source}
+
+\begin{tabularx}{\textwidth}{L{4.5cm} L{1.8cm} X}
+  \toprule
+  \rowcolor{vert}
+  \textcolor{white}{\textbf{Comparaison}} &
+  \textcolor{white}{\textbf{Corrélation}} &
+  \textcolor{white}{\textbf{Interprétation}} \\
+  \midrule
+  \rowcolor{vertclair}
+  Score CarHAB seul vs Score final & 0,95 & CarHAB est la source dominante \\
+  Score COSIA seul vs Score final & 0,94 & COSIA apporte une information quasi équivalente à CarHAB \\
+  \rowcolor{vertclair}
+  Score BD Forêt seul vs Score final & 0,09 & BD Forêt déjà capturée par CarHAB et COSIA -- apport qualitatif sur Dim.2 \\
+  CarHAB vs COSIA & 0,87 & Les deux sources principales sont très cohérentes entre elles \\
+  \bottomrule
+\end{tabularx}
+
+% ═══════════════════════════════════════════════
+\section{Cartographie et Résultats}
+
+\subsection{Distribution du score}
+
+\begin{tabularx}{\textwidth}{L{2.5cm} L{2cm} X}
+  \toprule
+  \rowcolor{vert}
+  \textcolor{white}{\textbf{Statistique}} &
+  \textcolor{white}{\textbf{Valeur}} &
+  \textcolor{white}{\textbf{Interprétation}} \\
+  \midrule
+  \rowcolor{vertclair}
+  Minimum & 0 & IRIS de référence le moins riche -- vallée du Rhône \\
+  1\textsuperscript{er} quartile & $\sim$17 & 25\% des IRIS ont un score inférieur à 17 \\
+  \rowcolor{vertclair}
+  Médiane & $\sim$37 & IRIS médian du territoire \\
+  Moyenne & $\sim$35 & Légèrement inférieure à la médiane -- asymétrie vers le bas \\
+  \rowcolor{vertclair}
+  3\textsuperscript{e} quartile & $\sim$49 & 75\% des IRIS ont un score inférieur à 49 \\
+  Maximum & 100 & IRIS de référence le plus riche -- massifs naturels \\
+  \bottomrule
+\end{tabularx}
+
+\vspace{0.3cm}
+\textbf{Couverture :} 281 IRIS, 0 donnée manquante. La couverture complète est obtenue grâce à COSIA qui couvre l'intégralité du territoire.
+
+\subsection{Carte du score de potentiel écologique}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{score final.png}
+  \caption{Score de potentiel écologique par IRIS (0--100) -- CarHAB + BD Forêt + COSIA -- Mars 2026}
+\end{figure}
+
+\subsection{Interprétation spatiale}
+
+\begin{itemize}[leftmargin=1.5cm]
+  \item \textbf{Zones foncées (80--100) :} massifs naturels du centre et du sud -- forte couverture en feuillus, milieux ouverts diversifiés, faible artificialisation. Quelques IRIS isolés à fort score à l'est correspondent probablement à des vallées encaissées avec zones humides et ripisylves.
+  \item \textbf{Zones moyennes (40--60) :} espaces de transition -- diversité de milieux correcte mais pression agricole modérée.
+  \item \textbf{Zones claires (0--20) :} vallée du Rhône à l'ouest et zones périurbaines -- forte artificialisation, prédominance des cultures et de la vigne.
+  \item \textbf{Continuité spatiale :} le score varie progressivement sans ruptures artificielles, ce qui valide la cohérence méthodologique.
+\end{itemize}
+
+% ═══════════════════════════════════════════════
+\section{Limites et Perspectives}
+
+\subsection{Limites}
+
+\begin{itemize}[leftmargin=1.5cm]
+  \item \textbf{Relativité du score :} le score 100 signifie ``le meilleur IRIS du territoire'' et non une valeur absolue de biodiversité. Non comparable entre territoires sans recalcul.
+  \item \textbf{Absence de connectivité :} un IRIS à fort potentiel isolé de zones naturelles voisines a une valeur écologique moindre qu'un IRIS équivalent en continuité. La connectivité n'est pas encore intégrée.
+  \item \textbf{BD Forêt datée de 2014 :} les dynamiques forestières récentes (incendies, coupes) ne sont pas prises en compte.
+  \item \textbf{Zones humides sous-représentées dans l'ACP :} rares sur le territoire, leur variance spatiale est faible même si leur valeur écologique est forte.
+\end{itemize}
 %======================================================
 \end{document}
